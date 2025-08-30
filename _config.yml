@@ -25,8 +25,7 @@ author:
   avatar           : "profile.png"
   name             : "Your Sidebar Name"
   pronouns         : # example: "he/him"  
-  bio              : "I am currently a student in the CyberSecurity & Network Systems program at Hocking Technical college in Nelsonville Ohio. Before that,
-I spent 2 years at Ohio University for computer science, which I plan to return to after I finish my degree at Hocking."
+  bio              : "I am currently a student in the CyberSecurity & Network Systems program at Hocking Technical college in Nelsonville Ohio. Before that, I spent 2 years at Ohio University for computer science, which I plan to return to after I finish my degree at Hocking."
   location         : "Athens Ohio"
   employer         : "Cantina Hospitally LLC
   uri              : # URL
