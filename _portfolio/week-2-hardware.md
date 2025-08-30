@@ -2,7 +2,7 @@
 title: "Week 2 - Hardware Components"
 collection: portfolio
 layout: single
-permalink/portfolio/week-2-hardware/
+permalink: /portfolio/week-2-hardware/
 date: 2025-08-30
 excerpt: "RAM Types, Storage Device Differences, and Labeled Motherboard Diagram."
 author_profile: true
