@@ -22,8 +22,11 @@ repository               : "ShellenbargerC/shellenbargerc.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
+
 author:
-  # ...keep your current fields (name, avatar, bio, etc.)
+  name: "Cameron Shellenbarger"
+  avatar: "profile.png"    # file at /images/profile.png
+  location: "Athens, Ohio"
 
   links:
     - label: "GitHub"
