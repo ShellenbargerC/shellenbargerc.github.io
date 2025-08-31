@@ -22,17 +22,29 @@ repository               : "ShellenbargerC/shellenbargerc.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar: "profile.png"
-  name: "Cameron Shellenbarger"
-  pronouns: "he/him"        # or "" if you want it blank
-  bio: >
-    I am currently a student in the CyberSecurity & Network Systems program at Hocking Technical College in
-    Nelsonville, Ohio. Before that, I spent 2 years at Ohio University for computer science, which I plan to
-    return to after I finish my degree at Hocking.
-  location: "Athens, Ohio"
-  employer: "Cantina Hospitality LLC"
-  uri: ""                   # leave empty or put your URL
-  email: "CameronShellenbarger@gmail.com"
+author:
+  # ...keep your current fields (name, avatar, bio, etc.)
+
+  links:
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/ShellenbargerC"
+
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://www.linkedin.com/in/cameron-shellenbarger-8372bb251"
+
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope"
+      url: "mailto:CameronShellenbarger@gmail.com"
+
+    - label: "Instagram"
+      icon: "fab fa-fw fa-instagram"
+      url: "https://instagram.com/cameron_s6543"
+
+    - label: "Discord"
+      icon: "fab fa-fw fa-discord"
+      url: "https://discord.com/users/255804564182269953"
 
 
   # Academic websites
