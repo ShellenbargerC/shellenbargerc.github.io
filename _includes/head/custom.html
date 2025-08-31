@@ -3,22 +3,38 @@
 <!-- start custom head snippets -->
 
 <!-- Default to dark on first visit, keep toggle working -->
+<!-- Default to dark on first visit, keep the toggle working -->
 <script>
   (function () {
-    var key = 'ap-theme';
+    // Keys seen across AcademicPages/Minimal Mistakes variants
+    var keys = ['ap-theme', 'theme'];
+    var stored = null;
+
+    // Read the first existing theme key, if any
+    for (var i = 0; i < keys.length; i++) {
+      var val = null;
+      try { val = localStorage.getItem(keys[i]); } catch (e) {}
+      if (val) { stored = val; break; }
+    }
+
+    // If no preference saved yet, default to dark and write both keys
+    var theme = stored || 'dark';
     try {
-      var stored = localStorage.getItem(key);
-      if (!stored) {
-        localStorage.setItem(key, 'dark'); // first visit -> dark
-        stored = 'dark';
-      }
-      document.documentElement.setAttribute('data-theme', stored);
-    } catch (e) {
-      // if localStorage blocked, still start dark
-      document.documentElement.setAttribute('data-theme', 'dark');
+      keys.forEach(function(k){ localStorage.setItem(k, theme); });
+    } catch (e) {}
+
+    // Apply immediately before theme JS/CSS paint
+    var root = document.documentElement;
+    root.setAttribute('data-theme', theme);
+    // also set common class names used by some forks
+    if (theme === 'dark') {
+      root.classList.add('dark','theme--dark');
+    } else {
+      root.classList.remove('dark','theme--dark');
     }
   })();
 </script>
+
 
 <!-- Support for Academicons -->
 <link rel="stylesheet" href="{{ base_path }}/assets/css/academicons.css"/>
