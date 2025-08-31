@@ -22,80 +22,81 @@ repository               : "ShellenbargerC/shellenbargerc.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-
-author:
+  avatar: "profile.png"   # file at /images/profile.png
   name: "Cameron Shellenbarger"
-  avatar: "profile.png"    # file at /images/profile.png
+  pronouns: "he/him"
+  bio: >
+    I am currently a student in the CyberSecurity & Network Systems program at Hocking Technical College in
+    Nelsonville, Ohio. Before that, I spent 2 years at Ohio University for computer science, which I plan to
+    return to after I finish my degree at Hocking.
   location: "Athens, Ohio"
+  employer: "Cantina Hospitality LLC"
+  uri: ""
+  email: "CameronShellenbarger@gmail.com"
 
+  # Repositories and software development
+  github: "ShellenbargerC"
+
+  # Keep these blank to HIDE them for now (fill later when you want them shown)
+  academia:
+  arxiv:
+  googlescholar:
+  inspire-hep:
+  impactstory:
+  orcid:
+  semantic:
+  pubmed:
+  researchgate:
+  scopus:
+  bitbucket:
+  codepen:
+  dribbble:
+  kaggle:
+  stackoverflow:
+  artstation:
+  bluesky:
+  facebook:
+  flickr:
+  foursquare:
+  goodreads:
+  google_plus:
+  keybase:
+  instagram:        # leave blank to prevent auto icon (we add it below in links)
+  lastfm:
+  linkedin:         # leave blank to prevent auto icon (we add it below in links)
+  mastodon:
+  medium:
+  pinterest:
+  soundcloud:
+  steam:
+  telegram:
+  tumblr:
+  twitter:
+  vine:
+  weibo:
+  wikipedia:
+  xing:
+  youtube:
+  zhihu:
+
+  # Explicit sidebar links IN THIS ORDER (shown now)
   links:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/ShellenbargerC"
-
     - label: "LinkedIn"
       icon: "fab fa-fw fa-linkedin"
       url: "https://www.linkedin.com/in/cameron-shellenbarger-8372bb251"
-
     - label: "Email"
       icon: "fas fa-fw fa-envelope"
       url: "mailto:CameronShellenbarger@gmail.com"
-
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
-      url: "https://instagram.com/cameron_s6543"
-
+      url: "https://instagram.com/your_username"        # TODO: replace
     - label: "Discord"
       icon: "fab fa-fw fa-discord"
-      url: "https://discord.com/users/255804564182269953"
+      url: "https://discord.com/users/your_numeric_id"  # TODO: replace
 
-
-  # Academic websites
-  academia         : # URL
-  arxiv            : # URL - Update with the correct link to your profile
-  googlescholar    : "https://scholar.google.com/citations?user=PS_CX0AAAAAJ"
-  inspire-hep      : # URL
-  impactstory      : # URL
-  orcid            : "http://orcid.org/yourorcidurl"
-  semantic         : # URL
-  pubmed           : "https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
-  researchgate     : # URL
-  scopus           : # URL
-
-  # Repositories and software development
-  bitbucket        : # Username - Update with your username on the site
-  codepen          : # Username
-  dribbble         : # Username
-  github           : "ShellenbargerC"
-  kaggle           : # Username  
-  stackoverflow    : # User number or user number and name (i.e., use "1" or "1/jeff-atwood")    
-
-  # Social media
-  artstation       : # Username
-  bluesky          : "bsky.app" # Replace this with you Bluesky username
-  facebook         : # Username
-  flickr           : # Username
-  foursquare       : # Username
-  goodreads        : # Username
-  google_plus      : # Username
-  keybase          : # Username
-  instagram        : # Username
-  lastfm           : # Username
-  linkedin         : # Username
-  mastodon         : # URL
-  medium           : # URL
-  pinterest        : # Username
-  soundcloud       : # Username
-  steam            : # Username
-  telegram         : # URL
-  tumblr           : # Username
-  twitter          : # Username for X / Twitter
-  vine             : # Username
-  weibo            : # Username
-  wikipedia        : # Username
-  xing             : # Username
-  youtube          : # Username
-  zhihu            : # Username
 
 # Publication Category - The following the list of publication categories and their headings
 publication_category:
