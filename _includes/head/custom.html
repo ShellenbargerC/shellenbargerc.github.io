@@ -2,6 +2,24 @@
 
 <!-- start custom head snippets -->
 
+<!-- Default to dark on first visit, keep toggle working -->
+<script>
+  (function () {
+    var key = 'ap-theme';
+    try {
+      var stored = localStorage.getItem(key);
+      if (!stored) {
+        localStorage.setItem(key, 'dark'); // first visit -> dark
+        stored = 'dark';
+      }
+      document.documentElement.setAttribute('data-theme', stored);
+    } catch (e) {
+      // if localStorage blocked, still start dark
+      document.documentElement.setAttribute('data-theme', 'dark');
+    }
+  })();
+</script>
+
 <!-- Support for Academicons -->
 <link rel="stylesheet" href="{{ base_path }}/assets/css/academicons.css"/>
 
@@ -15,3 +33,4 @@
 <meta name="theme-color" content="#ffffff"/>
 
 <!-- end custom head snippets -->
+
