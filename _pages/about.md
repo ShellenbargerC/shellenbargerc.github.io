@@ -1,3 +1,10 @@
+---
+title: "About Me"
+permalink: /about/
+layout: single
+author_profile: true
+---
+
 # About Me
 
 Hi, my name is **Cameron Shellenbarger**.  
