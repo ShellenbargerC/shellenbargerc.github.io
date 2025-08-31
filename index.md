@@ -12,9 +12,31 @@ I am currently pursuing a **two-year degree in Cybersecurity and Network Systems
 My main focus right now is on building my skills with **in-person hardware** and gaining deeper knowledge of the **physical aspects of networking and systems**. I enjoy learning how networks run at both the hardware and software levels.
 
 ### Skills & Certifications
-- Proficient in **HTML** and **Python**
-- **CompTIA ITF+ Certified**
-- Experienced with computer hardware and networking fundamentals
+**Networking**
+- Switch/router basics, home/SOHO setup, patch panels, Cat6 termination  
+- Cisco **Packet Tracer** (simulation & labs)
+
+**Security & Troubleshooting**
+- **Wireshark** packet capture/analysis, **Nmap** scanning  
+- Basic firewall rules, VPN fundamentals
+
+**Systems & Tools**
+- Linux (CLI), Windows (PowerShell basics), VirtualBox/VMware  
+- Git & GitHub, Markdown, basic Bash/PowerShell scripting
+
+**Web & Programming**
+- Python (scripts/automation/games)
+-  HTML/CSS
+
+**Certifications**
+- CompTIA **ITF+** (earned)
+
+### Training — Cisco Networking Academy (In Progress)
+- **Introduction to Networks (ITN)** — *Hocking College, instructor-led* (Aug 18, 2025 – Dec 12, 2025)  
+- **IT Essentials v8 (Computer Hardware & Operating Systems)** — *Hocking College, instructor-led* (Aug 16, 2025 – Dec 12, 2025)  
+- **Getting Started with Cisco Packet Tracer** — *self-paced (ongoing)*  
+- **Introduction to Cybersecurity** — *self-paced (ongoing)*
+
 
 ### Work Experience
 **DoorDash — Independent Contractor**  
