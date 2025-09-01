@@ -6,9 +6,7 @@ What was covered this week? Summarize key ideas in 2–3 sentences.
 One major thing covered this week was connectors and the different types and forms. Another topic that was covered was physically disassembling computers and looking at the components. 
  
 **Artifacts:**  
-- Screenshot of GitHub Pages live site  
 
- <img width="1001" height="72" alt="image" src="https://github.com/user-attachments/assets/b516a0ac-38d2-4e1a-96a1-219b2d65250c" />
 
 **Reflection:**  
 Write 1–2 paragraphs about what you learned and why it matters. Connect it to everyday security habits or the workplace.  
