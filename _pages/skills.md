@@ -6,6 +6,9 @@ author_profile: true
 ---
 
 ### Skills & Certifications
+
+- **Eagle Scout (BSA)** — June 24, 2025
+
 **Networking**
 - Switch/router basics, home/SOHO setup, patch panels, Cat6 termination  
 - Cisco **Packet Tracer** (simulation & labs)
