@@ -13,5 +13,5 @@ layout: single
 
 <!-- Optional: add a static image preview under the button -->
 <p style="margin-top:1rem">
-  <img src="/images/attackmap-preview.jpg" alt="Attack map preview" style="max-width:100%;height:auto;border:1px solid #ccc;">
+  <img width="1847" height="835" alt="image" src="https://github.com/user-attachments/assets/540878bb-b3f4-455e-86d9-cf4e3e079b29" />
 </p>
