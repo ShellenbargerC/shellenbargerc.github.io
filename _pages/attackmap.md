@@ -1,16 +1,17 @@
----
-layout: page
+\---
 title: AttackMap
 permalink: /attackmap/
+layout: single
 ---
 
-<div style="position:relative;padding-top:56.25%;background:#000;">
-  <iframe
-    src="https://horizon.netscout.com/?mapPosition=0.00~0.00~1.00"
-    style="position:absolute;inset:0;border:0;width:100%;height:100%;"
-    allowfullscreen
-    loading="lazy"
-  ></iframe>
-</div>
+> The live map host prevents embedding inside other websites for security.  
+> Use the button below to open it in a new tab.
 
-<p>If the embed doesn’t load, <a href="https://horizon.netscout.com/?mapPosition=0.00~0.00~1.00" target="_blank" rel="noopener">open the live map in a new tab</a>.</p>
+<a class="btn" href="https://horizon.netscout.com" target="_blank" rel="noopener noreferrer">
+  Open the Live NETSCOUT Attack Map
+</a>
+
+<!-- Optional: add a static image preview under the button -->
+<p style="margin-top:1rem">
+  <img src="/images/attackmap-preview.jpg" alt="Attack map preview" style="max-width:100%;height:auto;border:1px solid #ccc;">
+</p>
