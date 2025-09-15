@@ -16,4 +16,6 @@ main:
     url: /year-archive/
   - title: "Guide"
     url: /markdown/
+  - title: "AttackMap"
+    url: /attackmap/
 
