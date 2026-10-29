@@ -1,73 +1,45 @@
-# Cameron's portfolio and lab library
-
-The homepage features selected projects. The Lab library automatically lists all files and nested folders under `content/coursework/` and `content/independent/`.
-
-The full PythonEssentials folder from the supplied Playbook archive is copied unchanged into `content/coursework/PythonEssentials/`. Its five original files include two Python source files, a README, an explanation, and an output screenshot.
+# Cameron's portfolio
 
 ## Install this update
 
-Extract this ZIP, then copy all its contents into your existing `shellenbargerc.github.io` checkout, replacing matching files. Include `.github` and the new `scripts` and `content` folders. Commit and push to your default branch. No deletion of the repository or Git history is needed for this update.
+Extract the ZIP and copy its contents into your existing shellenbargerc.github.io checkout, replacing matching files. Include .github, scripts, courses.json, and the HTML files. Keep any additional labs you have added. Commit and push to your default branch. Keep Settings → Pages → Source set to GitHub Actions.
 
-Keep Settings → Pages → Source set to GitHub Actions. The updated workflow generates the file index, then publishes the website. It supports master and main. If your default branch has another name, update `.github/workflows/pages.yml`.
+The workflow publishes index.html, projects.html, labs.html, the compatibility redirect about.html, and the generated content index. It supports master and main; adjust it if your default branch has another name. Your address remains https://shellenbargerc.github.io/.
 
-## Upload new labs through GitHub
+## Site pages
 
-1. Open the portfolio repository on GitHub (not the original Playbook repository).
-2. Navigate to `content/coursework/PythonEssentials/` for Python coursework. Open the desired lab subfolder if it exists.
-3. Choose Add file → Upload files. Upload your files or drag in a lab folder to preserve its structure, then commit the upload to the default branch.
-4. Wait for Publish portfolio in the Actions tab to finish. The Lab library will show the uploaded files under the matching folders automatically. Refresh the browser if necessary.
+- Home (index.html): About Me introduction, current studies, approach to documenting work, and GitHub contact link. Its main action opens Projects.
+- Projects (projects.html): separate Course Projects and Personal Projects sections. Class buttons open the lab library scoped to the selected course.
+- Lab Library (labs.html): folders and viewable files, including course-scoped links.
 
-For another class, add a folder inside `content/coursework/`. For personal projects, use `content/independent/`. Upload a folder through GitHub's uploader or copy it into your checkout with GitHub Desktop. Nested folders are supported. Deleting or renaming files also updates the listing on the next publication.
+Navigation is Home / Projects / Lab Library. There is no separate About destination. The old about.html address redirects to Home so existing links continue to work. Edit your biography in index.html.
 
-Example paths:
+## Upload labs
 
-- `content/coursework/PythonEssentials/Lab2.1.13/Lab2.1.13.py`
-- `content/coursework/PythonEssentials/Lab2.2.1/notes.md`
-- `content/coursework/ServerManagement/Lab1/notes.md`
-- `content/coursework/CiscoCCNASecurity/Lab1/topology.png`
-- `content/independent/MyGame/screenshots/gameplay.png`
+On GitHub, open the portfolio repository, navigate to the appropriate folder, choose Add file → Upload files, then commit to the default branch. Once Publish portfolio in Actions finishes, the library updates automatically. You can also copy files into these folders locally, commit, and Push origin in GitHub Desktop.
 
-Only a GitHub commit is needed. You do not edit the HTML or generated JSON to add lab files. Uploading to the original Playbook repository does not synchronize automatically; upload to the portfolio content folders instead. Featured homepage cards are curated separately.
+- Python Essentials (SL) (2026AU-CYBR-2101-C535): content/coursework/PythonEssentials/
+- Server Management (2026AU-NET-2220-C535): content/coursework/ServerManagement/
+- Cisco CCNA Security (2026AU-CYBR-2102-C535): content/coursework/CiscoCCNASecurity/
+- Personal projects: content/independent/YourProject/
 
-All published content is public. Upload only material you want visible on your portfolio. Dotfiles are omitted from the listing, but are not a safe place for secrets in a public repository.
+Keep each week's or lab's files in a subfolder if desired. Nested folders and original file names are preserved. The full five-file PythonEssentials folder from your supplied Playbook archive is included unchanged. Empty courses use .gitkeep to retain their folders; these files are not shown in the library.
 
-## Supported previews
+Each immediate subfolder under content/independent/ automatically becomes a Personal Projects card. The three current classes are configured as Course Projects cards in projects.html. Course display names are in courses.json; folder paths stay short and stable.
 
-- Python, Markdown, plain text, and common code/config files: readable source preview. Markdown is shown as text. HTML and scripts display as source in the viewer; lab scripts are never executed by the indexer.
-- PNG, JPEG, GIF, WebP, AVIF: image preview.
-- PDF: browser PDF viewer, with a download link.
-- DOCX: extracted text preview; download the original for its formatting, tables, and images.
-- Other formats, such as Packet Tracer `.pkt`, ZIP, or spreadsheets: download links.
+Uploads go to this portfolio repo. The separate Playbook repository is not synchronized. All files published here are public; dotfiles being omitted from the listing does not make them private.
 
-Text previews are limited to about 512 KB; complete files remain downloadable. Individual file links can be shared. Original file names are preserved. GitHub upload and repository limits still apply.
+## Previews
+
+Text, Markdown, Python and common code/config files display as source; lab scripts are never executed by the indexer. Images display inline. PDFs use the browser's PDF viewer. DOCX files get an extracted text preview, with their original formatting available by download. Other files, such as Packet Tracer files, spreadsheets, and ZIPs, are downloadable. Text previews are limited to about 512 KB, while original downloads remain complete.
 
 ## Local preview
 
-GitHub automatically generates the index when publishing. To preview locally, run from the website folder with Python 3:
+From this folder, with Python 3:
 
 ```sh
 python scripts/build_content.py
 python -m http.server 8000
 ```
 
-Open http://localhost:8000/ . Opening labs.html directly as a local file cannot fetch the index in most browsers. A generated index for the current five files is included in this ZIP.
-
-## Customize
-
-Edit the `projects` array in index.html for featured cards. The site has cards for Python Essentials (SL) (2026AU-CYBR-2101-C535), Server Management (2026AU-NET-2220-C535), and Cisco CCNA Security (2026AU-CYBR-2102-C535). Each View project link opens only that course in the lab library, without a popup or an original-repository link. Course display names are configured in courses.json; upload paths stay short and stable. Update the About text as your portfolio develops. Styles are defined inside each HTML file.
-
-This update has not been published. Your address stays https://shellenbargerc.github.io/ after you push it.
-
-The new ServerManagement and CiscoCCNASecurity folders include .gitkeep files to preserve their empty folders in Git. They appear in the library immediately and show an empty-course message until you add labs. Copy courses.json along with the other updated files.
-
-## Homepage sections
-
-Course Projects contains exactly the three current classes. Each prominent View class projects button opens that class folder in the lab library. Personal Projects is a separate section. Folders uploaded directly under content/independent/ automatically become personal project cards after publication; their files remain browsable in the library. The existing folder paths are unchanged.
-
-## About page
-
-The About navigation link and A little about me button both open about.html. The former homepage About section has been removed. Edit the biography directly in about.html. Its initial copy uses the current classes and the supplied Python lab files. The name in the header links back to index.html on every page. Include the updated .github/workflows/pages.yml when installing so about.html gets published.
-
-## Separate Projects page
-
-index.html is the compact home page. Its Explore my projects button opens projects.html, which retains the existing Course Projects and Personal Projects card sections. The shared top navigation is Home / Projects / About / Lab Library. About-page project links now point into projects.html. The publishing workflow includes the new page. Personal project folders still create cards automatically on projects.html. Include the updated .github folder when installing this update.
+Open http://localhost:8000/ . A server is needed for the library and Projects page to fetch the index. GitHub generates the index automatically during publishing.
