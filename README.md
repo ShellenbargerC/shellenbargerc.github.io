@@ -55,3 +55,9 @@ The Certifications section is an explicit placeholder until credential names, is
 The NCL card displays the supplied Platinum badge directly, using CSS to frame the badge artwork from the unchanged screenshot. The full screenshot remains available on click.
 
 An Eagle Scout accomplishment records Troop 200 BSA, its 184th Eagle Scout recognition, and a rank date of June 24, 2025, using the information supplied by Cameron. It includes the troop's recognition quote. The Eagle Scout emblem loads from the Sam Houston Area Council graphics collection (https://communications.shacbsa.org/e); a styled Eagle Scout text decal is shown if the external image cannot load. The council is credited as the artwork source, not as Cameron's troop or awarding council. These recognitions remain under Accomplishments, separate from Certifications.
+
+## Eagle Scout project entry
+
+The Eagle Scout accomplishment now has a brief project summary and links to projects.html#eagle-scout-project. The Personal Projects section contains an expandable Alum Creek Park Renovation project entry. Following its direct link opens the entry automatically. The auto-generated Eagle Scout project card links to that entry, while its Open project files button opens the public summary in the lab library.
+
+The summary is under content/independent/EagleScout/Project-Summary.md. The original completed PDF contains private contact information and signatures and is deliberately not copied into the public site. The entry uses the completed report's scope and totals, excluding proposed tasks that were not carried out. No project completion year is inferred from the workbook's month/day fields.

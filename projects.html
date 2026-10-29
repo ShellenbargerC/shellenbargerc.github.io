@@ -15,6 +15,8 @@
     .projects-intro h1{font-size:clamp(40px,5vw,60px);margin:16px 0;letter-spacing:-2px}
     .projects-intro p{max-width:620px;color:var(--muted);font-size:17px}
     .section-jumps{display:flex;gap:12px;flex-wrap:wrap;margin-top:25px}
+    .project-case{margin-top:30px;background:#fff;border:1px solid var(--line);border-radius:13px;scroll-margin-top:25px}.project-case>summary{display:flex;justify-content:space-between;align-items:center;gap:25px;cursor:pointer;padding:27px;list-style:none}.project-case>summary::-webkit-details-marker{display:none}.project-case>summary:focus-visible{outline:3px solid #71933e;outline-offset:3px}.case-title{display:block;font-size:25px;font-weight:650;letter-spacing:-.6px;margin-top:10px;line-height:1.3}.case-toggle{font-size:12px;font-weight:600;color:var(--green);white-space:nowrap}.case-body{padding:0 27px 30px}.case-body h3{font-size:19px;margin:25px 0 8px}.case-body p{color:var(--muted);max-width:850px}.case-body .case-lead{font-size:17px}.case-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;padding:22px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.case-stats dt{font-size:12px;color:var(--muted)}.case-stats dd{font-size:26px;letter-spacing:-.5px;font-weight:650;margin:8px 0 0}.case-source{font-size:12px}
+    @media(max-width:620px){.project-case>summary{padding:22px;flex-wrap:wrap;gap:15px}.case-body{padding:0 22px 25px}.case-stats{grid-template-columns:1fr;gap:15px}.case-title{font-size:23px}}
   </style>
 </head>
 <body>
@@ -31,6 +33,18 @@
       <div class="section-title"><div><span class="eyebrow">Outside the classroom</span><h2 id="personal-title">Personal Projects.</h2></div><p>My own builds, experiments, and ideas, with room to explore how they come together.</p></div>
       <div class="grid" id="personal-grid"></div>
       <p class="empty" id="personal-empty">Personal projects will appear here as I add them.</p>
+      <details class="project-case" id="eagle-scout-project">
+        <summary><span><span class="eyebrow">Eagle Scout service project</span><span class="case-title">Alum Creek Park Renovation</span></span><span class="case-toggle">Read project ↓</span></summary>
+        <div class="case-body"><p class="case-lead">I planned and led volunteer crews renovating the putt-putt course and nature-center area at Alum Creek Campground. We refreshed the gardens, improved the course, and repainted the outdoor checkerboard for campers to enjoy.</p>
+          <dl class="case-stats"><div><dt>Total project effort</dt><dd>128 hours</dd></div><div><dt>Participants, including me</dt><dd>19</dd></div><div><dt>Materials funded personally</dt><dd>$453.10</dd></div></dl>
+          <h3>The project</h3><p>The work focused on the putt-putt course and the area around the nature center at Alum Creek Campground. We improved the course, refreshed the garden beds with mulch, and repainted the outdoor checkerboard.</p>
+          <h3>Planning and leadership</h3><p>I coordinated with the park and my troop, recruited volunteers, purchased materials, and organized multiple crews to work on different parts of the site. I checked their progress, adjusted assignments when teams needed more direction, and reminded volunteers to stay hydrated while working in the heat.</p>
+          <h3>Adapting the plan</h3><p>The park wanted to avoid disturbing campers around the holiday, so staining the shelter and moving the gaga ball pit were removed from the scope. Overgrown flowerbeds also made their boundaries difficult to identify. I adjusted the work and crew assignments as those challenges came up.</p>
+          <h3>The outcome</h3><p>The completed work refreshed the recreation area for campers, and the park’s assistant manager was pleased with the result. The experience helped me build confidence in coordinating people, solving problems, and following through on a plan.</p>
+          <p class="case-source">Project details and totals are summarized from my completed Eagle Scout Service Project Workbook. The 128 hours include planning and execution by all participants.</p>
+          <div class="actions"><a class="button secondary" href="labs.html?folder=independent%2FEagleScout">Open project files <span aria-hidden="true">↗</span></a><a class="button secondary" href="index.html#accomplishments-title">Back to accomplishments</a></div>
+        </div>
+      </details>
     </section>
   </main>
   <footer><span>© <span id="year"></span> Cameron Shellenbarger</span><span>Built with curiosity. Updated as I learn.</span></footer>
@@ -92,19 +106,22 @@
       const title=document.createElement('h3');title.textContent=project.title;
       const summary=document.createElement('p');summary.textContent=project.summary;
       const tags=document.createElement('div');tags.className='tags';(project.tags||[]).forEach(text=>{const tag=document.createElement('span');tag.className='tag';tag.textContent=text;tags.append(tag);});
-      const button=document.createElement('a');button.href='labs.html?folder='+encodeURIComponent(project.folder);button.className='detail';button.textContent=project.category==='coursework'?'View class projects':'View project';button.setAttribute('aria-label',(project.category==='coursework'?'View class projects for ':'View project: ')+project.title);const arrow=document.createElement('span');arrow.textContent='↗';arrow.setAttribute('aria-hidden','true');button.append(arrow);
+      const button=document.createElement('a');button.href=project.folder==='independent/EagleScout'?'#eagle-scout-project':'labs.html?folder='+encodeURIComponent(project.folder);button.className='detail';button.textContent=project.category==='coursework'?'View class projects':'View project';button.setAttribute('aria-label',(project.category==='coursework'?'View class projects for ':'View project: ')+project.title);const arrow=document.createElement('span');arrow.textContent='↗';arrow.setAttribute('aria-hidden','true');button.append(arrow);if(project.folder==='independent/EagleScout')button.addEventListener('click',()=>{document.querySelector('#eagle-scout-project').open=true;});
       body.append(type,title,summary,tags,button);card.append(visual,body);target.append(card);
     }
     projects.forEach((project,index)=>renderCard(project,index,grid));
     // Personal project folders become cards automatically after publication.
     fetch('content-index.json').then(response=>{if(!response.ok)throw Error('Index unavailable');return response.json();}).then(index=>{
       const personal=(index.folders||[]).filter(folder=>folder.path.startsWith('independent/')&&folder.path.split('/').length===2);
-      personal.forEach((folder,index)=>renderCard({title:folder.title,category:'independent',kind:'build',tags:['Personal project'],summary:'Explore the files, notes, and supporting work for this project.',folder:folder.path},index,document.querySelector('#personal-grid')));
+      personal.forEach((folder,index)=>renderCard({title:folder.title,category:'independent',kind:'build',tags:['Personal project'],summary:folder.path==='independent/EagleScout'?'My Eagle Scout service project: leading crews to renovate the putt-putt course and nature-center area at Alum Creek Campground.':'Explore the files, notes, and supporting work for this project.',folder:folder.path},index,document.querySelector('#personal-grid')));
       document.querySelector('#personal-empty').hidden=personal.length>0;
     }).catch(()=>{
       const empty=document.querySelector('#personal-empty');empty.replaceChildren();
       const link=document.createElement('a');link.href='labs.html?folder=independent';link.textContent='Browse personal project files ↗';link.style.textDecoration='underline';empty.append(link);
     });
+    function openLinkedProject(){if(location.hash==='#eagle-scout-project'){const project=document.querySelector('#eagle-scout-project');project.open=true;project.scrollIntoView({block:'start'});}}
+    window.addEventListener('hashchange',openLinkedProject);
+    openLinkedProject();
     document.querySelector('#year').textContent=new Date().getFullYear();
     </script>
 </body>
