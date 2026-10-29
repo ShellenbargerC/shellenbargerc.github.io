@@ -67,3 +67,7 @@ Course Projects contains exactly the three current classes. Each prominent View 
 ## About page
 
 The About navigation link and A little about me button both open about.html. The former homepage About section has been removed. Edit the biography directly in about.html. Its initial copy uses the current classes and the supplied Python lab files. The name in the header links back to index.html on every page. Include the updated .github/workflows/pages.yml when installing so about.html gets published.
+
+## Separate Projects page
+
+index.html is the compact home page. Its Explore my projects button opens projects.html, which retains the existing Course Projects and Personal Projects card sections. The shared top navigation is Home / Projects / About / Lab Library. About-page project links now point into projects.html. The publishing workflow includes the new page. Personal project folders still create cards automatically on projects.html. Include the updated .github folder when installing this update.
