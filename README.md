@@ -63,3 +63,7 @@ The new ServerManagement and CiscoCCNASecurity folders include .gitkeep files to
 ## Homepage sections
 
 Course Projects contains exactly the three current classes. Each prominent View class projects button opens that class folder in the lab library. Personal Projects is a separate section. Folders uploaded directly under content/independent/ automatically become personal project cards after publication; their files remain browsable in the library. The existing folder paths are unchanged.
+
+## About page
+
+The About navigation link and A little about me button both open about.html. The former homepage About section has been removed. Edit the biography directly in about.html. Its initial copy uses the current classes and the supplied Python lab files. The name in the header links back to index.html on every page. Include the updated .github/workflows/pages.yml when installing so about.html gets published.
