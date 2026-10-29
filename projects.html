@@ -21,30 +21,19 @@
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
-  <header><a class="brand" href="index.html" aria-label="Cameron Shellenbarger home">Cameron Shellenbarger<span>.</span></a><nav aria-label="Main navigation"><a href="index.html">Home</a><a href="projects.html" aria-current="page">Projects</a><a href="labs.html">Lab Library</a></nav></header>
+  <header><a class="brand" href="index.html" aria-label="Cameron Shellenbarger home">Cameron Shellenbarger<span>.</span></a><nav aria-label="Main navigation"><a href="index.html">Home</a><a href="projects.html" aria-current="page">Projects</a><a href="files.html">File Library</a></nav></header>
   <main id="main">
     <div class="projects-intro"><span class="eyebrow">Learning through doing</span><h1>Projects.</h1><p>Class projects and personal builds, each with their own space. Explore the work and the files behind it.</p><div class="section-jumps"><a class="button" href="#projects">Course Projects ↓</a><a class="button secondary" href="#personal-projects">Personal Projects ↓</a></div></div>
     <section id="projects" aria-labelledby="projects-title">
       <div class="section-title"><div><span class="eyebrow">In the classroom</span><h2 id="projects-title">Course Projects.</h2></div><p>Explore each class for its weekly labs, assignments, code, and supporting files.</p></div>
       <div class="grid" id="project-grid"></div>
-      <noscript><p><a href="labs.html">Browse the lab library for course files.</a></p></noscript>
+      <noscript><p><a href="files.html">Browse the file library for course files.</a></p></noscript>
     </section>
     <section id="personal-projects" aria-labelledby="personal-title" style="border-top:1px solid var(--line)">
       <div class="section-title"><div><span class="eyebrow">Outside the classroom</span><h2 id="personal-title">Personal Projects.</h2></div><p>My own builds, experiments, and ideas, with room to explore how they come together.</p></div>
       <div class="grid" id="personal-grid"></div>
       <p class="empty" id="personal-empty">Personal projects will appear here as I add them.</p>
-      <details class="project-case" id="eagle-scout-project">
-        <summary><span><span class="eyebrow">Eagle Scout service project</span><span class="case-title">Alum Creek Park Renovation</span></span><span class="case-toggle">Read project ↓</span></summary>
-        <div class="case-body"><p class="case-lead">I planned and led volunteer crews renovating the putt-putt course and nature-center area at Alum Creek Campground. We refreshed the gardens, improved the course, and repainted the outdoor checkerboard for campers to enjoy.</p>
-          <dl class="case-stats"><div><dt>Total project effort</dt><dd>128 hours</dd></div><div><dt>Participants, including me</dt><dd>19</dd></div><div><dt>Materials funded personally</dt><dd>$453.10</dd></div></dl>
-          <h3>The project</h3><p>The work focused on the putt-putt course and the area around the nature center at Alum Creek Campground. We improved the course, refreshed the garden beds with mulch, and repainted the outdoor checkerboard.</p>
-          <h3>Planning and leadership</h3><p>I coordinated with the park and my troop, recruited volunteers, purchased materials, and organized multiple crews to work on different parts of the site. I checked their progress, adjusted assignments when teams needed more direction, and reminded volunteers to stay hydrated while working in the heat.</p>
-          <h3>Adapting the plan</h3><p>The park wanted to avoid disturbing campers around the holiday, so staining the shelter and moving the gaga ball pit were removed from the scope. Overgrown flowerbeds also made their boundaries difficult to identify. I adjusted the work and crew assignments as those challenges came up.</p>
-          <h3>The outcome</h3><p>The completed work refreshed the recreation area for campers, and the park’s assistant manager was pleased with the result. The experience helped me build confidence in coordinating people, solving problems, and following through on a plan.</p>
-          <p class="case-source">Project details and totals are summarized from my completed Eagle Scout Service Project Workbook. The 128 hours include planning and execution by all participants.</p>
-          <div class="actions"><a class="button secondary" href="labs.html?folder=independent%2FEagleScout">Open project files <span aria-hidden="true">↗</span></a><a class="button secondary" href="index.html#accomplishments-title">Back to accomplishments</a></div>
-        </div>
-      </details>
+
     </section>
   </main>
   <footer><span>© <span id="year"></span> Cameron Shellenbarger</span><span>Built with curiosity. Updated as I learn.</span></footer>
@@ -106,7 +95,7 @@
       const title=document.createElement('h3');title.textContent=project.title;
       const summary=document.createElement('p');summary.textContent=project.summary;
       const tags=document.createElement('div');tags.className='tags';(project.tags||[]).forEach(text=>{const tag=document.createElement('span');tag.className='tag';tag.textContent=text;tags.append(tag);});
-      const button=document.createElement('a');button.href=project.folder==='independent/EagleScout'?'#eagle-scout-project':'labs.html?folder='+encodeURIComponent(project.folder);button.className='detail';button.textContent=project.category==='coursework'?'View class projects':'View project';button.setAttribute('aria-label',(project.category==='coursework'?'View class projects for ':'View project: ')+project.title);const arrow=document.createElement('span');arrow.textContent='↗';arrow.setAttribute('aria-hidden','true');button.append(arrow);if(project.folder==='independent/EagleScout')button.addEventListener('click',()=>{document.querySelector('#eagle-scout-project').open=true;});
+      const button=document.createElement('a');button.href='files.html?folder='+encodeURIComponent(project.folder);button.className='detail';button.textContent=project.category==='coursework'?'View class projects':'View project';button.setAttribute('aria-label',(project.category==='coursework'?'View class projects for ':'View project: ')+project.title);const arrow=document.createElement('span');arrow.textContent='↗';arrow.setAttribute('aria-hidden','true');button.append(arrow);
       body.append(type,title,summary,tags,button);card.append(visual,body);target.append(card);
     }
     projects.forEach((project,index)=>renderCard(project,index,grid));
@@ -117,11 +106,9 @@
       document.querySelector('#personal-empty').hidden=personal.length>0;
     }).catch(()=>{
       const empty=document.querySelector('#personal-empty');empty.replaceChildren();
-      const link=document.createElement('a');link.href='labs.html?folder=independent';link.textContent='Browse personal project files ↗';link.style.textDecoration='underline';empty.append(link);
+      const link=document.createElement('a');link.href='files.html?folder=independent';link.textContent='Browse personal project files ↗';link.style.textDecoration='underline';empty.append(link);
     });
-    function openLinkedProject(){if(location.hash==='#eagle-scout-project'){const project=document.querySelector('#eagle-scout-project');project.open=true;project.scrollIntoView({block:'start'});}}
-    window.addEventListener('hashchange',openLinkedProject);
-    openLinkedProject();
+    if(location.hash==='#eagle-scout-project')location.replace('files.html?folder=independent%2FEagleScout');
     document.querySelector('#year').textContent=new Date().getFullYear();
     </script>
 </body>

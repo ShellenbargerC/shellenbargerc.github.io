@@ -4,15 +4,15 @@
 
 Extract the ZIP and copy its contents into your existing shellenbargerc.github.io checkout, replacing matching files. Include .github, scripts, courses.json, and the HTML files. Keep any additional labs you have added. Commit and push to your default branch. Keep Settings → Pages → Source set to GitHub Actions.
 
-The workflow publishes index.html, projects.html, labs.html, the compatibility redirect about.html, and the generated content index. It supports master and main; adjust it if your default branch has another name. Your address remains https://shellenbargerc.github.io/.
+The workflow publishes index.html, projects.html, files.html, the compatibility redirect about.html, and the generated content index. It supports master and main; adjust it if your default branch has another name. Your address remains https://shellenbargerc.github.io/.
 
 ## Site pages
 
 - Home (index.html): About Me introduction, Projects callout, NCL accomplishment, Certifications section, approach to documenting work, and GitHub contact link. Its main action opens Projects.
 - Projects (projects.html): separate Course Projects and Personal Projects sections. Class buttons open the lab library scoped to the selected course.
-- Lab Library (labs.html): folders and viewable files, including course-scoped links.
+- File Library (files.html): folders and viewable files, including course-scoped links.
 
-Navigation is Home / Projects / Lab Library. There is no separate About destination. The old about.html address redirects to Home so existing links continue to work. Edit your biography in index.html.
+Navigation is Home / Projects / File Library. There is no separate About destination. The old about.html address redirects to Home so existing links continue to work. Edit your biography in index.html.
 
 ## Upload labs
 
@@ -61,3 +61,9 @@ An Eagle Scout accomplishment records Troop 200 BSA, its 184th Eagle Scout recog
 The Eagle Scout accomplishment now has a brief project summary and links to projects.html#eagle-scout-project. The Personal Projects section contains an expandable Alum Creek Park Renovation project entry. Following its direct link opens the entry automatically. The auto-generated Eagle Scout project card links to that entry, while its Open project files button opens the public summary in the lab library.
 
 The summary is under content/independent/EagleScout/Project-Summary.md. The original completed PDF contains private contact information and signatures and is deliberately not copied into the public site. The entry uses the completed report's scope and totals, excluding proposed tasks that were not carried out. No project completion year is inferred from the workbook's month/day fields.
+
+## Project overview in File Library
+
+The Projects page contains only project cards; there is no Eagle Scout dropdown below them. View project opens files.html?folder=independent%2FEagleScout, showing the full overview and supporting files. The homepage accomplishment button opens the same view. An old labs.html link redirects to files.html, preserving its folder and file parameters in browsers with JavaScript.
+
+Before/after photos were not present in the supplied workbook. Add the original project photos under content/independent/EagleScout/before/ and content/independent/EagleScout/after/. After publication they appear automatically in labeled galleries in the project's File Library view. Other project images appear under More photos. Clicking a photo opens its full file preview, and the overview link returns to the project. No placeholder or invented project photos are included.
