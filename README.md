@@ -8,7 +8,7 @@ The workflow publishes index.html, projects.html, labs.html, the compatibility r
 
 ## Site pages
 
-- Home (index.html): About Me introduction, current studies, approach to documenting work, and GitHub contact link. Its main action opens Projects.
+- Home (index.html): About Me introduction, Projects callout, NCL accomplishment, Certifications section, approach to documenting work, and GitHub contact link. Its main action opens Projects.
 - Projects (projects.html): separate Course Projects and Personal Projects sections. Class buttons open the lab library scoped to the selected course.
 - Lab Library (labs.html): folders and viewable files, including course-scoped links.
 
@@ -43,3 +43,9 @@ python -m http.server 8000
 ```
 
 Open http://localhost:8000/ . A server is needed for the library and Projects page to fetch the index. GitHub generates the index automatically during publishing.
+
+## Accomplishments and certifications
+
+Home features the supplied NCL Spring 2026 team summary: Royal Flush placed 229th out of 3,634 teams, scoring 2,395 / 3,000 with 83.4% completion. It is explicitly labeled a team result. The individual result and all four original screenshots are accessible under the expandable competition records. Badge percentiles differ from the report placements, so no combined percentile claim is made. Files are in assets/accomplishments/ and are copied automatically by the workflow.
+
+The Certifications section is an explicit placeholder until credential names, issuers, dates, and verification links are provided. Competition badges are not presented as professional certifications.
