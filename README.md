@@ -48,7 +48,7 @@ Open http://localhost:8000/ . A server is needed for the library and Projects pa
 
 Home features the supplied NCL Spring 2026 team summary: Royal Flush placed 229th out of 3,634 teams, scoring 2,395 / 3,000 with 83.4% completion. It is explicitly labeled a team result. The individual result and all four original screenshots are accessible under the expandable competition records. Badge percentiles differ from the report placements, so no combined percentile claim is made. Files are in assets/accomplishments/ and are copied automatically by the workflow.
 
-The Certifications section is an explicit placeholder until credential names, issuers, dates, and verification links are provided. Competition badges are not presented as professional certifications.
+The Certifications section now lists CompTIA IT Fundamentals+ (ITF+), with user-supplied CompTIA ID COMP001022059449. No issue date or individual verification link was supplied. Competition badges are not presented as professional certifications.
 
 ## Visible accomplishment badges
 
@@ -67,3 +67,7 @@ The summary is under content/independent/EagleScout/Project-Summary.md. The orig
 The Projects page contains only project cards; there is no Eagle Scout dropdown below them. View project opens files.html?folder=independent%2FEagleScout, showing the full overview and supporting files. The homepage accomplishment button opens the same view. An old labs.html link redirects to files.html, preserving its folder and file parameters in browsers with JavaScript.
 
 Before/after photos were not present in the supplied workbook. Add the original project photos under content/independent/EagleScout/before/ and content/independent/EagleScout/after/. After publication they appear automatically in labeled galleries in the project's File Library view. Other project images appear under More photos. Clicking a photo opens its full file preview, and the overview link returns to the project. No placeholder or invented project photos are included.
+
+## CompTIA ITF+
+
+The Certifications section lists CompTIA IT Fundamentals+ (ITF+) with CompTIA ID COMP001022059449, supplied by Cameron. The badge artwork loads from the CompTIA-issued badge page on Credly; a text badge is displayed if the external image is unavailable. About this certification links to the issuer's general badge description, not to a verified individual credential record. No issue date or credential status was inferred.
