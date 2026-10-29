@@ -23,7 +23,8 @@ Example paths:
 
 - `content/coursework/PythonEssentials/Lab2.1.13/Lab2.1.13.py`
 - `content/coursework/PythonEssentials/Lab2.2.1/notes.md`
-- `content/coursework/Networking/Lab1/topology.png`
+- `content/coursework/ServerManagement/Lab1/notes.md`
+- `content/coursework/CiscoCCNASecurity/Lab1/topology.png`
 - `content/independent/MyGame/screenshots/gameplay.png`
 
 Only a GitHub commit is needed. You do not edit the HTML or generated JSON to add lab files. Uploading to the original Playbook repository does not synchronize automatically; upload to the portfolio content folders instead. Featured homepage cards are curated separately.
@@ -53,6 +54,8 @@ Open http://localhost:8000/ . Opening labs.html directly as a local file cannot 
 
 ## Customize
 
-Edit the `projects` array in index.html for featured cards. The site has one real Python Essentials card linking to the original Playbook and the lab library. Update the About text as your portfolio develops. Styles are defined inside each HTML file.
+Edit the `projects` array in index.html for featured cards. The site has cards for Python Essentials (SL) (2026AU-CYBR-2101-C535), Server Management (2026AU-NET-2220-C535), and Cisco CCNA Security (2026AU-CYBR-2102-C535). Each View project link opens only that course in the lab library, without a popup or an original-repository link. Course display names are configured in courses.json; upload paths stay short and stable. Update the About text as your portfolio develops. Styles are defined inside each HTML file.
 
 This update has not been published. Your address stays https://shellenbargerc.github.io/ after you push it.
+
+The new ServerManagement and CiscoCCNASecurity folders include .gitkeep files to preserve their empty folders in Git. They appear in the library immediately and show an empty-course message until you add labs. Copy courses.json along with the other updated files.

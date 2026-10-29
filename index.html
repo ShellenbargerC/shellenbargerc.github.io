@@ -21,25 +21,42 @@
     <section class="about" id="about" aria-labelledby="about-title"><div><span class="eyebrow">Behind the projects</span><h2 id="about-title">A place to show<br>the whole process.</h2><p>A finished result tells part of the story. Each project also has room for the problem, the approach, the challenges, and what I learned along the way.</p></div><div><div class="about-list"><b>01 / Coursework</b><span>Labs, assignments & class projects</span></div><div class="about-list"><b>02 / Independent</b><span>Personal builds & experiments</span></div><div class="about-list"><b>03 / The details</b><span>Screenshots, takeaways & source code</span></div><p style="font-size:13px">My Python Essentials coursework includes practice with console input, string formatting, and printed output. The lab library keeps the code, notes, and screenshots together.</p></div></section>
     <section id="contact" class="contact" aria-labelledby="contact-title"><div><h2 id="contact-title">Let’s connect.</h2><p>Explore my code and projects on GitHub.</p></div><a class="button" href="https://github.com/ShellenbargerC">Find me on GitHub <span aria-hidden="true">↗</span></a></section>
   </main><footer><span>© <span id="year"></span> Cameron Shellenbarger</span><span>Built with curiosity. Updated as I learn.</span></footer>
-  <dialog id="project-dialog" aria-labelledby="dialog-title"><form method="dialog"><button class="close" aria-label="Close project details">Close ×</button></form><span class="dialog-label" id="dialog-category"></span><h2 id="dialog-title"></h2><p id="dialog-summary"></p><h3>The challenge</h3><p id="dialog-challenge"></p><h3>The approach</h3><p id="dialog-approach"></p><h3>What I learned</h3><p id="dialog-learned"></p><div id="dialog-links" class="actions"></div></dialog>
   <script>
     // Add featured projects here. Lab files are indexed separately and automatically.
     const projects = [
       {
-            "title": "Python Essentials",
+            "title": "Python Essentials (SL) (2026AU-CYBR-2101-C535)",
             "category": "coursework",
             "kind": "build",
             "tags": [
                   "Python",
-                  "Console input",
-                  "Output formatting"
+                  "Coursework"
             ],
-            "summary": "Python coursework with source files, an arrow-printing exercise, written explanations, and an output screenshot.",
-            "challenge": "Practice console input and output, including combining printed lines with newline sequences and changing a text-based arrow.",
-            "approach": "The folder includes an input-and-greeting exercise and Lab 2.1.13. The arrow lab keeps the Python source, a written walkthrough of the variations, and an output screenshot together.",
-            "learned": "The files document practice with print(), input(), f-strings, string concatenation, newline sequences, and spacing in console output.",
-            "demoUrl": "labs.html#coursework%2FPythonEssentials%2FREADME.md",
-            "sourceUrl": "https://github.com/ShellenbargerC/Playbook/tree/main/PythonEssentials"
+            "summary": "Python source files, written explanations, and lab output screenshots.",
+            "folder": "coursework/PythonEssentials"
+      },
+      {
+            "title": "Server Management (2026AU-NET-2220-C535)",
+            "category": "coursework",
+            "kind": "network",
+            "tags": [
+                  "Servers",
+                  "Coursework"
+            ],
+            "summary": "Course folder ready for Server Management labs, notes, and supporting files.",
+            "folder": "coursework/ServerManagement"
+      },
+      {
+            "title": "Cisco CCNA Security (2026AU-CYBR-2102-C535)",
+            "category": "coursework",
+            "kind": "security",
+            "tags": [
+                  "Cisco",
+                  "Security",
+                  "Coursework"
+            ],
+            "summary": "Course folder ready for CCNA Security labs, notes, and supporting files.",
+            "folder": "coursework/CiscoCCNASecurity"
       }
 ];
     const art = {
@@ -47,7 +64,7 @@
       security:'<path d="M75 6 114 22v30c0 24-22 44-39 51-17-7-39-27-39-51V22Z"/><circle cx="75" cy="47" r="13"/><path d="m85 57 15 16M56 83h18M62 90h26"/>',
       build:'<rect x="13" y="13" width="124" height="84" rx="7"/><path d="M13 33h124M23 23h3m6 0h3m6 0h3M55 51 40 65l15 14m40-28 15 14-15 14M83 46 68 84"/>'
     };
-    const grid=document.querySelector('#project-grid'),dialog=document.querySelector('#project-dialog');
+    const grid=document.querySelector('#project-grid');
     let category='all';
     function label(value){return value==='coursework'?'Coursework':'Independent';}
     function safeUrl(value, image=false){try{const u=new URL(value,location.href);return (['https:','http:'].includes(u.protocol)||(image&&u.protocol==='file:'))?u.href:null;}catch{return null;}}
@@ -63,16 +80,9 @@
       const title=document.createElement('h3');title.textContent=project.title;
       const summary=document.createElement('p');summary.textContent=project.summary;
       const tags=document.createElement('div');tags.className='tags';(project.tags||[]).forEach(text=>{const tag=document.createElement('span');tag.className='tag';tag.textContent=text;tags.append(tag);});
-      const button=document.createElement('button');button.type='button';button.className='detail';button.textContent='View project';button.setAttribute('aria-label','View '+project.title);const arrow=document.createElement('span');arrow.textContent='↗';arrow.setAttribute('aria-hidden','true');button.append(arrow);button.addEventListener('click',()=>openProject(project));
+      const button=document.createElement('a');button.href='labs.html?folder='+encodeURIComponent(project.folder);button.className='detail';button.textContent='View project';button.setAttribute('aria-label','View '+project.title);const arrow=document.createElement('span');arrow.textContent='↗';arrow.setAttribute('aria-hidden','true');button.append(arrow);
       body.append(type,title,summary,tags,button);card.append(visual,body);grid.append(card);
     });
-    function openProject(project){
-      document.querySelector('#dialog-category').textContent=label(project.category);
-      ['title','summary','challenge','approach','learned'].forEach(key=>document.querySelector('#dialog-'+key).textContent=project[key]||'Details coming soon.');
-      const links=document.querySelector('#dialog-links');links.replaceChildren();
-      [['sourceUrl','Original playbook ↗'],['demoUrl','Browse lab files ↗']].forEach(([key,title])=>{const url=project[key]&&safeUrl(project[key]);if(url){const a=document.createElement('a');a.href=url;a.className='button';a.textContent=title;links.append(a);}});
-      dialog.showModal();
-    }
     function filterProjects(){const query=document.querySelector('#search').value.toLowerCase().trim();let visible=0;projects.forEach((project,index)=>{const match=(category==='all'||project.category===category)&&[project.title,project.summary,...(project.tags||[])].join(' ').toLowerCase().includes(query);grid.children[index].hidden=!match;if(match)visible++;});document.querySelector('#empty').hidden=visible!==0;document.querySelector('#results').textContent=visible+' project'+(visible===1?'':'s')+' shown';}
     document.querySelectorAll('[data-filter]').forEach(button=>button.addEventListener('click',()=>{category=button.dataset.filter;document.querySelectorAll('[data-filter]').forEach(item=>item.setAttribute('aria-pressed',String(item===button)));filterProjects();}));
     document.querySelector('#search').addEventListener('input',filterProjects);

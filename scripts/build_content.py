@@ -23,6 +23,16 @@ def docx_text(path):
 
 def build(root=ROOT):
     content = root / 'content'
+    metadata_path = root / 'courses.json'
+    titles = json.loads(metadata_path.read_text(encoding='utf-8')) if metadata_path.exists() else {}
+    folders = []
+    for path in sorted(content.rglob('*'), key=lambda p: p.as_posix().lower()):
+        relative = path.relative_to(content)
+        if (path.is_dir() and not path.is_symlink()
+                and relative.parts[0] in {'coursework', 'independent'}
+                and not any(part.startswith('.') for part in relative.parts)):
+            key = relative.as_posix()
+            folders.append({'path': key, 'title': titles.get(key, path.name)})
     records = []
     for path in sorted(content.rglob('*'), key=lambda p: p.as_posix().lower()):
         if not path.is_file() or path.is_symlink():
@@ -61,7 +71,7 @@ def build(root=ROOT):
         records.append({'path': relative.as_posix(), 'url': 'content/' + relative.as_posix(),
                         'name': path.name, 'category': relative.parts[0], 'kind': kind,
                         'size': size, 'preview': preview, 'truncated': truncated})
-    (root / 'content-index.json').write_text(json.dumps({'files': records}, ensure_ascii=False), encoding='utf-8')
+    (root / 'content-index.json').write_text(json.dumps({'files': records, 'folders': folders}, ensure_ascii=False), encoding='utf-8')
     print(f'Indexed {len(records)} files')
     return records
 

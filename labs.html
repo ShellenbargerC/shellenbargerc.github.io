@@ -13,20 +13,24 @@
 <main><div class="heading"><span class="eyebrow">The work behind the projects</span><h1>Lab library.</h1><p>Browse coursework and independent work, organized by folder. Open a file to read the code, see the output, or explore the notes.</p></div><div id="error" class="error" role="alert" hidden></div><div class="layout"><aside class="sidebar" aria-label="Lab folders"><div class="filters" role="group" aria-label="File category"><button class="filter" aria-pressed="true" data-category="all">All</button><button class="filter" aria-pressed="false" data-category="coursework">Coursework</button><button class="filter" aria-pressed="false" data-category="independent">Independent</button></div><label for="search" class="note">Search files and folders</label><input id="search" type="search" placeholder="Try Python or Lab2.1.13"><nav id="tree" class="tree" aria-label="Files" style="display:block"></nav><p class="count" id="count" role="status">Loading files…</p></aside><section id="viewer" class="viewer" aria-label="File preview"><div class="empty-box"><div class="intro-icon" aria-hidden="true">&lt;/&gt;</div><h2>Select a file to explore.</h2><p class="muted">Open a folder on the left, then choose a lab file.</p><p class="note">Code is displayed as source. PDF, image, and Word text previews are available; other formats can be downloaded.</p></div></section></div></main>
 <script>
 'use strict';
-let files=[],category='all',selected='';
+let files=[],folders=[],category='all',selected='';
+const courseFolder=new URLSearchParams(location.search).get('folder')||'';
 const tree=document.querySelector('#tree'), viewer=document.querySelector('#viewer');
 const label=c=>c==='coursework'?'Coursework':'Independent';
 const encodedPath=path=>path.split('/').map(encodeURIComponent).join('/');
 function el(tag,text,cls){const node=document.createElement(tag);if(text!==undefined)node.textContent=text;if(cls)node.className=cls;return node;}
-function displayName(name){return name==='PythonEssentials'?'Python Essentials':name;}
+function displayName(name,path){return folders.find(f=>f.path===path)?.title||name;}
+function inCourse(path){return !courseFolder||path===courseFolder||path.startsWith(courseFolder+'/');}
 function renderTree(){
  const query=document.querySelector('#search').value.trim().toLowerCase();
- const filtered=files.filter(f=>(category==='all'||category===f.category)&&f.path.toLowerCase().includes(query));
+ const matches=(path,title='')=>inCourse(path)&&(category==='all'||path.split('/')[0]===category)&&(path+' '+title).toLowerCase().includes(query);
+ const filtered=files.filter(f=>matches(f.path,folders.find(d=>f.path.startsWith(d.path+'/')&&d.path.split('/').length===2)?.title||''));
  const root={folders:new Map(),files:[]};
+ for(const folder of folders.filter(f=>matches(f.path,f.title))){let node=root;for(const part of folder.path.split('/')){if(!node.folders.has(part))node.folders.set(part,{folders:new Map(),files:[]});node=node.folders.get(part);}}
  for(const file of filtered){let node=root;const parts=file.path.split('/');for(const part of parts.slice(0,-1)){if(!node.folders.has(part))node.folders.set(part,{folders:new Map(),files:[]});node=node.folders.get(part);}node.files.push(file);}
  const openPaths=new Set([...tree.querySelectorAll('details[open]')].map(d=>d.dataset.path));
  const firstRender=!tree.children.length;
- function branch(node,prefix=''){const list=el('ul');for(const [name,child] of [...node.folders].sort(([a],[b])=>a.localeCompare(b,undefined,{numeric:true}))){const path=prefix?prefix+'/'+name:name;const li=el('li'),details=el('details');details.dataset.path=path;details.open=firstRender||Boolean(query)||selected.startsWith(path+'/')||openPaths.has(path);details.append(el('summary',name==='coursework'||name==='independent'?label(name):displayName(name)),branch(child,path));li.append(details);list.append(li);}for(const file of node.files){const li=el('li'),button=el('button',file.name,'file');button.type='button';button.setAttribute('aria-current',String(file.path===selected));button.addEventListener('click',()=>{location.hash=encodeURIComponent(file.path);});li.append(button);list.append(li);}return list;}
+ function branch(node,prefix=''){const list=el('ul');for(const [name,child] of [...node.folders].sort(([a],[b])=>a.localeCompare(b,undefined,{numeric:true}))){const path=prefix?prefix+'/'+name:name;const li=el('li'),details=el('details');details.dataset.path=path;details.open=firstRender||Boolean(query)||selected.startsWith(path+'/')||openPaths.has(path);details.append(el('summary',name==='coursework'||name==='independent'?label(name):displayName(name,path)),branch(child,path));li.append(details);list.append(li);}for(const file of node.files){const li=el('li'),button=el('button',file.name,'file');button.type='button';button.setAttribute('aria-current',String(file.path===selected));button.addEventListener('click',()=>{location.hash=encodeURIComponent(file.path);});li.append(button);list.append(li);}return list;}
  tree.replaceChildren(branch(root));if(!filtered.length)tree.append(el('p','No matching files.','note'));
  document.querySelector('#count').textContent=filtered.length+' file'+(filtered.length===1?'':'s')+' shown';
 }
@@ -35,7 +39,7 @@ function showFile(file){
  viewer.append(el('div',file.path,'path'),el('h2',file.name));
  const info=el('p',label(file.category)+' · '+new Intl.NumberFormat().format(file.size)+' bytes','note');viewer.append(info);
  const toolbar=el('div',undefined,'toolbar'),download=el('a','Download original ↓','button');download.href=encodedPath(file.url);download.download=file.name;toolbar.append(download);
- const github=el('a','View on GitHub ↗','button secondary');github.href='https://github.com/ShellenbargerC/shellenbargerc.github.io/blob/HEAD/'+encodedPath(file.url);toolbar.append(github);viewer.append(toolbar);
+ viewer.append(toolbar);
  if(file.kind==='image'){const image=el('img');image.className='image';image.src=encodedPath(file.url);image.alt=file.name;viewer.append(image);}
  else if(file.kind==='pdf'){const frame=el('iframe');frame.className='pdf';frame.src=encodedPath(file.url);frame.title=file.name+' PDF preview';viewer.append(frame,el('p','If your browser cannot display this PDF, use Download original.','note'));}
  else if(file.kind==='text'){const pre=el('pre'),code=el('code',file.preview||'(Empty file)');pre.append(code);viewer.append(pre);if(file.truncated)viewer.append(el('p','Preview shortened. Download the file to read the rest.','note'));}
@@ -43,10 +47,20 @@ function showFile(file){
  else{viewer.append(el('p','This format is available to download. Its original application may be required to open it.','muted'));}
  renderTree();
 }
-function readHash(){let path;try{path=decodeURIComponent(location.hash.slice(1));}catch{return;}if(!path)return;const file=files.find(f=>f.path===path);if(file)showFile(file);else{viewer.replaceChildren(el('h2','File not found'),el('p','This file may have moved. Choose another file from the folders.','muted'));}}
+function showCourse(){
+ if(!courseFolder)return;
+ const title=displayName(courseFolder.split('/').pop(),courseFolder);
+ viewer.replaceChildren(el('div','Course files','eyebrow'),el('h2',title));
+ const back=el('a','← Browse all courses','button secondary');back.href='labs.html';viewer.append(back);
+ const courseFiles=files.filter(f=>inCourse(f.path));
+ if(!courseFiles.length){viewer.append(el('p','No lab files yet. New uploads to this course folder will appear here automatically.','muted'));return;}
+ viewer.append(el('p',courseFiles.length+' files in this course. Select one to preview it.','muted'));
+ const list=el('ul');for(const file of courseFiles){const li=el('li'),link=el('a',file.path.slice(courseFolder.length+1));link.href='#'+encodeURIComponent(file.path);link.style='text-decoration:underline;overflow-wrap:anywhere';li.style='margin:12px 0';li.append(link);list.append(li);}viewer.append(list);
+}
+function readHash(){let path;try{path=decodeURIComponent(location.hash.slice(1));}catch{return;}if(!path){selected='';showCourse();renderTree();return;}const file=files.find(f=>f.path===path&&inCourse(f.path));if(file)showFile(file);else{viewer.replaceChildren(el('h2','File not found'),el('p','This file may have moved or belongs to another course. Choose a file from the folders.','muted'));}}
 document.querySelectorAll('[data-category]').forEach(button=>button.addEventListener('click',()=>{category=button.dataset.category;document.querySelectorAll('[data-category]').forEach(b=>b.setAttribute('aria-pressed',String(b===button)));renderTree();}));
 document.querySelector('#search').addEventListener('input',renderTree);window.addEventListener('hashchange',readHash);
-fetch('content-index.json').then(r=>{if(!r.ok)throw Error('Index unavailable');return r.json();}).then(index=>{files=index.files;renderTree();readHash();}).catch(()=>{document.querySelector('#count').textContent='Files could not load.';const error=document.querySelector('#error');error.hidden=false;error.textContent=location.protocol==='file:'?'This library needs a web server. View it on your published website, or run python -m http.server from the site folder and open http://localhost:8000/labs.html.':'The file index could not load. Check that the latest Publish portfolio run completed successfully in GitHub Actions.';});
+fetch('content-index.json').then(r=>{if(!r.ok)throw Error('Index unavailable');return r.json();}).then(index=>{files=index.files;folders=index.folders||[];if(courseFolder){document.querySelector('.filters').hidden=true;document.querySelector('h1').textContent=displayName(courseFolder.split('/').pop(),courseFolder);document.querySelector('.heading p').textContent='Files and labs for this course. Choose a file below to preview it.';const all=el('a','← All courses','button secondary');all.href='labs.html';document.querySelector('.heading').append(all);}renderTree();readHash();}).catch(()=>{document.querySelector('#count').textContent='Files could not load.';const error=document.querySelector('#error');error.hidden=false;error.textContent=location.protocol==='file:'?'This library needs a web server. View it on your published website, or run python -m http.server from the site folder and open http://localhost:8000/labs.html.':'The file index could not load. Check that the latest Publish portfolio run completed successfully in GitHub Actions.';});
 </script>
 </body>
 </html>
