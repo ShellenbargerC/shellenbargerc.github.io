@@ -59,3 +59,7 @@ Edit the `projects` array in index.html for featured cards. The site has cards f
 This update has not been published. Your address stays https://shellenbargerc.github.io/ after you push it.
 
 The new ServerManagement and CiscoCCNASecurity folders include .gitkeep files to preserve their empty folders in Git. They appear in the library immediately and show an empty-course message until you add labs. Copy courses.json along with the other updated files.
+
+## Homepage sections
+
+Course Projects contains exactly the three current classes. Each prominent View class projects button opens that class folder in the lab library. Personal Projects is a separate section. Folders uploaded directly under content/independent/ automatically become personal project cards after publication; their files remain browsable in the library. The existing folder paths are unchanged.
