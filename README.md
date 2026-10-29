@@ -49,3 +49,9 @@ Open http://localhost:8000/ . A server is needed for the library and Projects pa
 Home features the supplied NCL Spring 2026 team summary: Royal Flush placed 229th out of 3,634 teams, scoring 2,395 / 3,000 with 83.4% completion. It is explicitly labeled a team result. The individual result and all four original screenshots are accessible under the expandable competition records. Badge percentiles differ from the report placements, so no combined percentile claim is made. Files are in assets/accomplishments/ and are copied automatically by the workflow.
 
 The Certifications section is an explicit placeholder until credential names, issuers, dates, and verification links are provided. Competition badges are not presented as professional certifications.
+
+## Visible accomplishment badges
+
+The NCL card displays the supplied Platinum badge directly, using CSS to frame the badge artwork from the unchanged screenshot. The full screenshot remains available on click.
+
+An Eagle Scout accomplishment records Troop 200 BSA, its 184th Eagle Scout recognition, and a rank date of June 24, 2025, using the information supplied by Cameron. It includes the troop's recognition quote. The Eagle Scout emblem loads from the Sam Houston Area Council graphics collection (https://communications.shacbsa.org/e); a styled Eagle Scout text decal is shown if the external image cannot load. The council is credited as the artwork source, not as Cameron's troop or awarding council. These recognitions remain under Accomplishments, separate from Certifications.
