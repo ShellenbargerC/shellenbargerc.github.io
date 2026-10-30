@@ -71,7 +71,16 @@ def build(root=ROOT):
         records.append({'path': relative.as_posix(), 'url': 'content/' + relative.as_posix(),
                         'name': path.name, 'category': relative.parts[0], 'kind': kind,
                         'size': size, 'preview': preview, 'truncated': truncated})
-    (root / 'content-index.json').write_text(json.dumps({'files': records, 'folders': folders}, ensure_ascii=False), encoding='utf-8')
+    pair_path = root / 'photo-pairs.json'
+    photo_pairs = json.loads(pair_path.read_text(encoding='utf-8')) if pair_path.exists() else {}
+    indexed_paths = {record['path'] for record in records}
+    for project, pairs in photo_pairs.items():
+        for pair in pairs:
+            for stage in ('before', 'after'):
+                path = pair[stage]['path']
+                if path not in indexed_paths or not path.startswith(project + '/'):
+                    raise ValueError(f'Photo pair references a missing or misplaced file: {path}')
+    (root / 'content-index.json').write_text(json.dumps({'files': records, 'folders': folders, 'photoPairs': photo_pairs}, ensure_ascii=False), encoding='utf-8')
     print(f'Indexed {len(records)} files')
     return records
 

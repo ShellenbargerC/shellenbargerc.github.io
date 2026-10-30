@@ -71,3 +71,13 @@ Before/after photos were not present in the supplied workbook. Add the original 
 ## CompTIA ITF+
 
 The Certifications section lists CompTIA IT Fundamentals+ (ITF+) with CompTIA ID COMP001022059449, supplied by Cameron. The badge artwork loads from the CompTIA-issued badge page on Credly; a text badge is displayed if the external image is unavailable. About this certification links to the issuer's general badge description, not to a verified individual credential record. No issue date or credential status was inferred.
+
+## Curated project photos
+
+Eight selected photographs from the supplied Projectpics archive are included as four matched before/after comparisons in the Eagle Scout project's File Library overview. Areas: outdoor checkerboards, bridge-side planting bed, circular planting island, and corner bed beside the stepping stones. Duplicate frames are omitted. The corner-bed after photo is labeled to indicate neighboring work is still underway.
+
+Selected original filenames and captions are recorded in photo-pairs.json. HEIC images were decoded to JPEG, scaled to a maximum dimension of 1600 pixels, and saved without camera metadata for browser compatibility and page weight. No scene content was generated or retouched. The source photos remain in the supplied archive. The indexer validates both files in each pair before publishing; include photo-pairs.json when copying this update. Unpaired future photo uploads still use the automatic before/after galleries.
+
+## Additional comparisons
+
+Three more pairs were appended without changing the existing four pairs or their image files: gazebo surroundings (IMG_7984 / IMG_8024), tree-side planting bed (IMG_8006 / IMG_8034), and a wider bridge-approach view (IMG_7959 / IMG_8021). The gallery now contains seven comparisons and fourteen photographs. Captions distinguish the gazebo's wider/closer viewpoints, the tree-bed finishing work, and the bridge view's overlap with the original bridge comparison.

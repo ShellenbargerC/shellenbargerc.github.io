@@ -1,0 +1,102 @@
+{
+  "independent/EagleScout": [
+    {
+      "title": "Outdoor checkerboards",
+      "description": "Repainting the worn checkerboards outside the nature center.",
+      "before": {
+        "source": "IMG_0309.HEIC",
+        "caption": "Faded and worn paint before the renovation.",
+        "path": "independent/EagleScout/before/checkerboards.jpg"
+      },
+      "after": {
+        "source": "IMG_0310.HEIC",
+        "caption": "Repainted black-and-white squares across both boards.",
+        "path": "independent/EagleScout/after/checkerboards.jpg"
+      }
+    },
+    {
+      "title": "Bridge-side planting bed",
+      "description": "Refreshing the planting area beside the mini-golf bridge railing.",
+      "before": {
+        "source": "IMG_7954.HEIC",
+        "caption": "Weeds and patchy ground around the plants and curved stone edge.",
+        "path": "independent/EagleScout/before/bridge-planting-bed.jpg"
+      },
+      "after": {
+        "source": "IMG_8019.HEIC",
+        "caption": "Fresh mulch around the established plants and stone edging.",
+        "path": "independent/EagleScout/after/bridge-planting-bed.jpg"
+      }
+    },
+    {
+      "title": "Circular planting island",
+      "description": "Cleaning up the central planting island inside the circular mini-golf hole.",
+      "before": {
+        "source": "IMG_7963.HEIC",
+        "caption": "The planting island before the bed was refreshed.",
+        "path": "independent/EagleScout/before/circular-planting-island.jpg"
+      },
+      "after": {
+        "source": "IMG_8023.HEIC",
+        "caption": "A defined, freshly mulched bed around the ornamental grass.",
+        "path": "independent/EagleScout/after/circular-planting-island.jpg"
+      }
+    },
+    {
+      "title": "Corner bed & stepping-stone approach",
+      "description": "Defining the planting bed beside the angled mini-golf hole and stepping stones.",
+      "before": {
+        "source": "IMG_7970.HEIC",
+        "caption": "Overgrown ground beside the course and stepping-stone approach.",
+        "path": "independent/EagleScout/before/corner-planting-bed.jpg"
+      },
+      "after": {
+        "source": "IMG_8014.HEIC",
+        "caption": "The inner corner bed after mulching, with work continuing nearby.",
+        "path": "independent/EagleScout/after/corner-planting-bed.jpg"
+      }
+    },
+    {
+      "title": "Gazebo surroundings",
+      "description": "A wider view of the gazebo area before work and a closer view of the refreshed landscaping beside it.",
+      "before": {
+        "source": "IMG_7984.HEIC",
+        "caption": "The course and patchy ground beside the gazebo before the landscaping work.",
+        "path": "independent/EagleScout/before/gazebo-surroundings.jpg"
+      },
+      "after": {
+        "source": "IMG_8024.HEIC",
+        "caption": "Fresh mulch around the gazebo-side concrete pad and established plants.",
+        "path": "independent/EagleScout/after/gazebo-surroundings.jpg"
+      }
+    },
+    {
+      "title": "Tree-side planting bed",
+      "description": "Refreshing the wooded-edge planting area between the mini-golf lanes.",
+      "before": {
+        "source": "IMG_8006.HEIC",
+        "caption": "Overgrown ground near the tree, stepping stones, and tire planter.",
+        "path": "independent/EagleScout/before/tree-side-planting-bed.jpg"
+      },
+      "after": {
+        "source": "IMG_8034.HEIC",
+        "caption": "Fresh mulch across the tree-side bed, with finishing work still underway.",
+        "path": "independent/EagleScout/after/tree-side-planting-bed.jpg"
+      }
+    },
+    {
+      "title": "Bridge approach: wider view",
+      "description": "An additional angle on the bridge-side planting improvements, showing the longer strip beside the course.",
+      "before": {
+        "source": "IMG_7959.HEIC",
+        "caption": "The longer planting strip beside the curved stone edging before it was refreshed.",
+        "path": "independent/EagleScout/before/bridge-approach-wide.jpg"
+      },
+      "after": {
+        "source": "IMG_8021.HEIC",
+        "caption": "A wider view of the refreshed bed at the bridge approach and adjacent lane.",
+        "path": "independent/EagleScout/after/bridge-approach-wide.jpg"
+      }
+    }
+  ]
+}
