@@ -85,17 +85,19 @@
       }
     },
     {
-      "title": "Bridge approach: wider view",
-      "description": "An additional angle on the bridge-side planting improvements, showing the longer strip beside the course.",
+      "title": "Replacing broken and misaligned paver stones",
+      "description": "Damaged and displaced edging on the course, followed by repair work along another hole.",
       "before": {
-        "source": "IMG_7959.HEIC",
-        "caption": "The longer planting strip beside the curved stone edging before it was refreshed.",
-        "path": "independent/EagleScout/before/bridge-approach-wide.jpg"
+        "source": "IMG_7973.jpg",
+        "label": "Before",
+        "caption": "Loose, displaced border pavers along the angled mini-golf hole.",
+        "path": "independent/EagleScout/before/paver-stone-repairs.jpg"
       },
       "after": {
-        "source": "IMG_8021.HEIC",
-        "caption": "A wider view of the refreshed bed at the bridge approach and adjacent lane.",
-        "path": "independent/EagleScout/after/bridge-approach-wide.jpg"
+        "source": "IMG_7994(1).jpg",
+        "label": "During repairs",
+        "caption": "Volunteers resetting and aligning paver stones along another section of the course.",
+        "path": "independent/EagleScout/after/paver-stone-repairs.jpg"
       }
     }
   ]

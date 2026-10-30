@@ -81,3 +81,9 @@ Selected original filenames and captions are recorded in photo-pairs.json. HEIC 
 ## Additional comparisons
 
 Three more pairs were appended without changing the existing four pairs or their image files: gazebo surroundings (IMG_7984 / IMG_8024), tree-side planting bed (IMG_8006 / IMG_8034), and a wider bridge-approach view (IMG_7959 / IMG_8021). The gallery now contains seven comparisons and fourteen photographs. Captions distinguish the gazebo's wider/closer viewpoints, the tree-bed finishing work, and the bridge view's overlap with the original bridge comparison.
+
+## Paver-repair photo replacement
+
+The wider bridge-approach comparison was replaced with the two newly supplied JPEGs: IMG_7973.jpg (Before) and IMG_7994(1).jpg (During repairs), titled Replacing broken and misaligned paver stones. The other six comparisons and their image files are unchanged. The photographs show different holes and are captioned accordingly.
+
+Include file-library-ignore.json and the updated scripts folder when installing. The ignore list keeps the retired bridge-approach images out of the file listing and galleries even if older copies remain in your checkout after merging the update. It does not remove any files from your checkout.

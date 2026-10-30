@@ -33,6 +33,8 @@ def build(root=ROOT):
                 and not any(part.startswith('.') for part in relative.parts)):
             key = relative.as_posix()
             folders.append({'path': key, 'title': titles.get(key, path.name)})
+    ignore_path = root / 'file-library-ignore.json'
+    ignored = set(json.loads(ignore_path.read_text(encoding='utf-8'))) if ignore_path.exists() else set()
     records = []
     for path in sorted(content.rglob('*'), key=lambda p: p.as_posix().lower()):
         if not path.is_file() or path.is_symlink():
@@ -41,6 +43,8 @@ def build(root=ROOT):
         if relative.parts[0] not in {'coursework', 'independent'}:
             continue
         if any(part.startswith('.') for part in relative.parts) or path.name == 'Thumbs.db':
+            continue
+        if relative.as_posix() in ignored:
             continue
         extension = path.suffix.lower()
         size = path.stat().st_size

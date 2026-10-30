@@ -28,6 +28,6 @@ Source: completed Eagle Scout Service Project Workbook. This public summary omit
 
 ## Before and after photos
 
-Seven comparisons document the outdoor checkerboards, bridge-side planting bed, circular planting island, corner bed beside the stepping stones, gazebo surroundings, tree-side planting bed, and an additional wider view of the bridge approach. Open this project's overview in File Library to view the paired photos. The corner-bed after photo shows the mulched bed while work continues nearby. The camera angles vary between some pairs.
+Seven comparisons document the outdoor checkerboards, bridge-side planting bed, circular planting island, corner bed beside the stepping stones, gazebo surroundings, tree-side planting bed, and replacing broken or misaligned paver stones. Open this project's overview in File Library to view the paired photos. The corner-bed after photo shows the mulched bed while work continues nearby. The camera angles vary between some pairs.
 
-The gazebo comparison uses a wider before view and closer after view. The tree-side bed after photo shows finishing work underway. The bridge-approach comparison is an additional angle of an area already documented, rather than a separate renovation.
+The gazebo comparison uses a wider before view and closer after view. The tree-side bed after photo shows finishing work underway. The paver-repair photos show damaged edging on one hole and volunteers working on another. They are labeled Before and During repairs, rather than implying a completed after photo.
