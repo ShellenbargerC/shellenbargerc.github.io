@@ -1,0 +1,111 @@
+Lab - Create Your Personal Code of Ethical Conduct
+Objectives
+Part 1: Research Approaches to Ethical Decision Making
+
+Part 2: Research Code of Ethics
+
+Part 3: Develop Your Own Personal Code of Ethical Conduct
+
+Background / Scenario
+When confronted with an ethical dilemma, what do you consider when making a decision?
+
+Suppose you find a new USB 3.0 flash drive in the computer lab, what would you do? A student in your class says they found a site on the internet that has all of the class exams and quizzes with answers, what would you do?
+
+Working in Cybersecurity is not always about stopping cyber attacks. As a Cybersecurity specialist, your organization may entrust you with some of the most sensitive data. As a result, you will be confronted with challenging ethical dilemmas, which may not have an easy or clear answer. For example, when researching a security breach, are the personal devices of employees and their personal content included?
+
+The focus of this lab is to research approaches or perspectives for ethical decision making. Next, you will research code of ethics and finally you will create your own personal code of ethical conduct.
+
+Required Resources
+=  PC or mobile device with Internet access
+
+Instructions
+Part 1: Research Approaches to Ethical Decision Making
+There are several approaches or perspectives on Ethical Decision Making, including Utilitarian ethics, the Rights approach and the Common Good approach. Other ethical decision models include the Fairness or Justice approach as well as the Virtue approach.
+
+In this part, you will research each ethical decision model or framework and then formulate the underlying principle from that approach.
+
+Use an internet browser to research approaches to ethical decision making.
+
+Step 1: Research Utilitarian ethics
+Question:
+Define the underlying principle for the Utilitarian Ethics approach.
+
+Answer Area
+Choosing the option that causes the least harm and does the most good overall.
+Show Answer
+Step 2: Research the Rights approach to ethical decision making.
+Question:
+Define the underlying principle for the Rights approach to ethical decision making.
+
+Answer Area
+Choosing the option that respects and protects the rights of everyone affected.
+Show Answer
+Step 3: Research the Common Good approach to ethical decision making.
+Question:
+Define the underlying principle for the Common Good approach to ethical decision making.
+
+Answer Area
+Choosing the option that supports the best outcome for the community based on its shared conditions. 
+Show Answer
+Step 4: Research the Fairness or Justice approach to ethical decision making.
+Question:
+Define the underlying principle for the Fairness or Justice approach to ethical decision making.
+
+Answer Area
+Choosing the option that treats everyone fairly, with differences in treatment based on relevant reasons.
+Show Answer
+Part 2: Research Code of Ethics
+Most organizations develop their own code of ethics. Developed by management, this document is based on values and principles to promote the company business with honesty and integrity.
+
+In this part, you will research computer code of ethics and cybersecurity code of ethics.
+
+Use an internet browser to research code of ethics.
+
+Question:
+Based on your research, create a list of at least ten items. The list should be sequential from most important to least important.
+Answer Area
+1. Protect people and avoid causing harm through technology.
+2. Respect people's privacy and protect their personal information.
+3. Only access systems and accounts you have permission to use.
+4. Be honest about your actions, findings, and mistakes.
+5. Keep confidential information secure and only share it with authorized people.
+6. Follow laws and ethical workplace policies.
+7. Report security risks and unethical activity through the proper channels.
+8. Treat everyone fairly and avoid discrimination.
+9. Respect other people's work and give credit when using it.
+10. Keep your skills updated so you can do your work responsibly.
+
+Part 3: Develop Your Own Personal Code of Ethical Conduct
+A code of conduct provides guidelines for acceptable as well as unacceptable specific behaviors.
+
+Based on your research, develop a list of your own personal code of ethical conduct.
+
+Question:
+Create a code of ethics list of at least ten items. The list should be sequential from most important to least important.
+
+Answer Area
+1. Avoid actions that could hurt others.
+2. Respect people's rights and privacy.
+3. Be honest and take responsibility for my mistakes.
+4. Treat people fairly regardless of their background or beliefs.
+5. Only access accounts, files, and systems I have permission to use.
+6. Keep private information confidential.
+7. Speak up when I see something harmful or unethical.
+8. Keep my promises and follow through on my responsibilities.
+9. Give credit for other people's work.
+10. Keep learning and use feedback to improve my decisions.
+
+Reflection Questions
+1.  Is there a Cyber Security incident you remember where the company acted ethically or the company acted un-ethically? Explain.
+
+Answer Area
+I can not currently think of one. 
+Show Answer
+2.  What is a weakness or drawback to Utilitarian Ethics?
+
+Answer Area
+A drawback to Utilitarian Ethics is that choosing the best outcome overall can still harm a smaller group of people or ignore their rights.
+
+Based on your list of code of ethics, which is the most challenging item in your list to implement?
+Answer Area
+Speaking up when I see something harmful or unethical would be the most challenging. It can be difficult when the person involved has authority over me or when speaking up could cause conflict.
