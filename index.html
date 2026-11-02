@@ -41,7 +41,8 @@
     .eagle-project-summary h4{font-size:20px;margin:0 0 12px;letter-spacing:-.4px}.eagle-project-summary p{font-size:15px;color:var(--muted);max-width:800px;margin:0 0 20px}
     .certification-card{border:1px solid var(--line);border-radius:15px;background:white;padding:30px;display:grid;grid-template-columns:180px minmax(0,1fr);gap:30px;align-items:center}.certification-badge{display:flex;align-items:center;justify-content:center;min-height:180px}.certification-badge img{display:block;max-width:100%;height:auto}.certification-info h3{font-size:24px;line-height:1.3;margin:10px 0 12px;letter-spacing:-.5px}.certification-info p{font-size:14px;color:var(--muted);margin:0 0 18px;max-width:650px}.credential-details{margin:0 0 22px}.credential-details dt{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.8px}.credential-details dd{margin:5px 0 0;font:14px/1.6 ui-monospace,monospace;overflow-wrap:anywhere}.certification-badge-fallback{width:165px;min-height:165px;border:3px solid #c8202f;border-radius:16px;padding:17px 10px;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#b61b2a;background:white}.certification-badge-fallback span{font-size:14px}.certification-badge-fallback strong{font-size:37px;line-height:1.4}.certification-badge-fallback span:last-child{text-transform:uppercase;font-size:11px;letter-spacing:2px}
     @media(max-width:760px){.certification-card{grid-template-columns:1fr;padding:24px;gap:15px}.certification-info h3{font-size:22px}}
-  </style>
+  .avalanche-feature{gap:18px;transition:box-shadow .15s}.avalanche-feature:hover{box-shadow:0 8px 24px #14292324}.avalanche-icon{width:150px;height:auto;color:var(--lime)}.avalanche-feature h2{font-size:38px;line-height:1.15;letter-spacing:-1.3px;color:var(--lime);margin:0}.avalanche-feature h2 span{display:block;font-size:20px;line-height:1.4;letter-spacing:-.3px;margin-top:10px;color:var(--paper)}.avalanche-feature p{max-width:none;margin:0}.avalanche-cta{display:flex;justify-content:space-between;align-items:center;gap:15px;font-size:14px;font-weight:650;border-top:1px solid #ffffff35;padding-top:18px;color:var(--lime)}
+</style>
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -49,7 +50,13 @@
   <main id="main">
     <section class="about-intro" aria-labelledby="about-title">
       <div><span class="eyebrow">About me</span><h1 id="about-title">Hi, I’m Cameron<br><em>Shellenbarger.</em></h1><p class="bio">I’m studying Python, server management, and network security. This portfolio is where I bring my class projects and personal work together.</p><p class="bio">I want it to show more than a finished result: the code, the notes, the output, and what I’m learning as I go.</p><div class="actions"><a class="button" href="projects.html">Explore my projects <span aria-hidden="true">↗</span></a><a class="button secondary" href="files.html">Browse the file library</a></div></div>
-      <div class="identity"><span class="eyebrow">Student & builder</span><strong aria-hidden="true">CS.</strong><p>Learning in the classroom.<br>Making room to explore outside it.</p></div>
+      <a class="identity avalanche-feature" id="avalanche-feature" href="files.html?folder=independent%2FAvalanche-Network-Simulation" aria-labelledby="avalanche-feature-title">
+        <span class="eyebrow">Personal project · In progress</span>
+        <svg class="avalanche-icon" viewBox="0 0 180 68" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="2"><path d="M30 34h120M90 34V12M90 34v22"/><rect x="6" y="22" width="36" height="24" rx="4"/><rect x="138" y="22" width="36" height="24" rx="4"/><rect x="73" y="2" width="34" height="20" rx="4"/><rect x="73" y="46" width="34" height="20" rx="4"/></g></svg>
+        <h2 id="avalanche-feature-title">Avalanche<span>Operational Security &amp;<br>Network Infrastructure</span></h2>
+        <p>Designing the network, documenting the decisions, and building the project step by step.</p>
+        <span class="avalanche-cta">View latest project folder <span aria-hidden="true">↗</span></span>
+      </a>
     </section>
     <section class="projects-callout" aria-labelledby="explore-title">
       <div><span class="eyebrow">Put learning into practice</span><h2 id="explore-title">Check out my projects.</h2><p>Explore my class labs and personal builds, with the code, notes, and files behind them.</p></div>
@@ -77,6 +84,7 @@
     <section class="contact" aria-labelledby="connect-title"><div><h2 id="connect-title">Let’s connect.</h2><p>Explore my code and projects on GitHub.</p></div><a class="button" href="https://github.com/ShellenbargerC">Find me on GitHub <span aria-hidden="true">↗</span></a></section>
   </main>
   <footer><span>© <span id="year"></span> Cameron Shellenbarger</span><a href="#main">Back to top ↑</a></footer>
+  <script src="assets/js/avalanche-feature.js"></script>
   <script>document.querySelector('#year').textContent=new Date().getFullYear();</script>
 </body>
 </html>

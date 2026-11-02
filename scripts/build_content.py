@@ -1,5 +1,6 @@
 """Index public portfolio files. Standard library only; never executes lab files."""
 import json
+import subprocess
 from pathlib import Path
 import zipfile
 import xml.etree.ElementTree as ET
@@ -21,6 +22,19 @@ def docx_text(path):
     return '\n'.join(''.join(p.itertext()) for p in document.findall('.//w:p', ns))[:PREVIEW_LIMIT]
 
 
+def folder_created_at(root, relative):
+    """First commit that added a file here; later file edits do not change it."""
+    try:
+        result = subprocess.run(
+            ['git', 'log', '--reverse', '--diff-filter=A', '--format=%ct', '--',
+             'content/' + relative], cwd=root, capture_output=True, text=True,
+            timeout=15, check=True)
+        timestamps = [int(line) for line in result.stdout.splitlines() if line.strip().isdigit()]
+        return min(timestamps) if timestamps else None
+    except (OSError, subprocess.SubprocessError):
+        return None
+
+
 def build(root=ROOT):
     content = root / 'content'
     metadata_path = root / 'courses.json'
@@ -32,7 +46,8 @@ def build(root=ROOT):
                 and relative.parts[0] in {'coursework', 'independent'}
                 and not any(part.startswith('.') for part in relative.parts)):
             key = relative.as_posix()
-            folders.append({'path': key, 'title': titles.get(key, path.name)})
+            folders.append({'path': key, 'title': titles.get(key, path.name),
+                            'createdAt': folder_created_at(root, key)})
     ignore_path = root / 'file-library-ignore.json'
     ignored = set(json.loads(ignore_path.read_text(encoding='utf-8'))) if ignore_path.exists() else set()
     records = []
