@@ -1,15 +1,19 @@
 name: Publish portfolio
+
 on:
   push:
-    branches: [master, main]
+    branches: [main, master]
   workflow_dispatch:
+
 permissions:
   contents: read
   pages: write
   id-token: write
+
 concurrency:
   group: pages
   cancel-in-progress: true
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -17,24 +21,22 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - uses: actions/checkout@v4
+      - name: Check out the repository
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - uses: actions/setup-python@v5
+      - name: Set up Python
+        uses: actions/setup-python@v5
         with:
           python-version: '3.x'
-      - name: Index lab folders
-        run: python scripts/build_content.py
-      - uses: actions/configure-pages@v5
-      - name: Stage public files
-        run: |
-          mkdir _site
-          cp index.html _site/
-          cp about.html projects.html files.html labs.html content-index.json _site/
-          cp -R content _site/
-          if [ -d assets ]; then cp -R assets _site/; fi
-      - uses: actions/upload-pages-artifact@v3
+      - name: Build and validate the complete site
+        run: python scripts/build_site.py
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+      - name: Upload the public site
+        uses: actions/upload-pages-artifact@v3
         with:
           path: _site
-      - uses: actions/deploy-pages@v4
+      - name: Publish the site
         id: deployment
+        uses: actions/deploy-pages@v4

@@ -102,13 +102,13 @@
     // Personal project folders become cards automatically after publication.
     fetch('content-index.json').then(response=>{if(!response.ok)throw Error('Index unavailable');return response.json();}).then(index=>{
       const personal=(index.folders||[]).filter(folder=>folder.path.startsWith('independent/')&&folder.path.split('/').length===2);
-      personal.forEach((folder,index)=>renderCard({title:folder.title,category:'independent',kind:'build',tags:['Personal project'],summary:folder.path==='independent/EagleScout'?'My Eagle Scout service project: leading crews to renovate the putt-putt course and nature-center area at Alum Creek Campground.':'Explore the files, notes, and supporting work for this project.',folder:folder.path},index,document.querySelector('#personal-grid')));
+      personal.forEach((folder,index)=>renderCard({title:folder.title,category:'independent',kind:'build',tags:['Personal project'],summary:folder.path==='independent/Eagle Scout Project'?'My Eagle Scout service project: leading crews to renovate the putt-putt course and nature-center area at Alum Creek Campground.':'Explore the files, notes, and supporting work for this project.',folder:folder.path},index,document.querySelector('#personal-grid')));
       document.querySelector('#personal-empty').hidden=personal.length>0;
     }).catch(()=>{
       const empty=document.querySelector('#personal-empty');empty.replaceChildren();
       const link=document.createElement('a');link.href='files.html?folder=independent';link.textContent='Browse personal project files ↗';link.style.textDecoration='underline';empty.append(link);
     });
-    if(location.hash==='#eagle-scout-project')location.replace('files.html?folder=independent%2FEagleScout');
+    if(location.hash==='#eagle-scout-project')location.replace('files.html?folder=independent%2FEagle%20Scout%20Project');
     document.querySelector('#year').textContent=new Date().getFullYear();
     </script>
 </body>

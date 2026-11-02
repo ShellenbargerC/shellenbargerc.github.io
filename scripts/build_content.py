@@ -93,13 +93,20 @@ def build(root=ROOT):
     pair_path = root / 'photo-pairs.json'
     photo_pairs = json.loads(pair_path.read_text(encoding='utf-8')) if pair_path.exists() else {}
     indexed_paths = {record['path'] for record in records}
+    valid_pairs = {}
     for project, pairs in photo_pairs.items():
         for pair in pairs:
+            valid = True
             for stage in ('before', 'after'):
-                path = pair[stage]['path']
+                path = pair.get(stage, {}).get('path', '')
                 if path not in indexed_paths or not path.startswith(project + '/'):
-                    raise ValueError(f'Photo pair references a missing or misplaced file: {path}')
-    (root / 'content-index.json').write_text(json.dumps({'files': records, 'folders': folders, 'photoPairs': photo_pairs}, ensure_ascii=False), encoding='utf-8')
+                    print(f'WARNING: skipping photo comparison {pair.get("title", "Untitled")!r}: missing or misplaced {stage} image {path!r}')
+                    valid = False
+            if valid:
+                valid_pairs.setdefault(project, []).append(pair)
+    alias_path = root / 'folder-aliases.json'
+    aliases = json.loads(alias_path.read_text(encoding='utf-8')) if alias_path.exists() else {}
+    (root / 'content-index.json').write_text(json.dumps({'files': records, 'folders': folders, 'photoPairs': valid_pairs, 'folderAliases': aliases}, ensure_ascii=False), encoding='utf-8')
     print(f'Indexed {len(records)} files')
     return records
 

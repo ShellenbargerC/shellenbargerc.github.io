@@ -1,17 +1,17 @@
 {
-  "independent/EagleScout": [
+  "independent/Eagle Scout Project": [
     {
       "title": "Outdoor checkerboards",
       "description": "Repainting the worn checkerboards outside the nature center.",
       "before": {
         "source": "IMG_0309.HEIC",
         "caption": "Faded and worn paint before the renovation.",
-        "path": "independent/EagleScout/before/checkerboards.jpg"
+        "path": "independent/Eagle Scout Project/before/checkerboards.jpg"
       },
       "after": {
         "source": "IMG_0310.HEIC",
         "caption": "Repainted black-and-white squares across both boards.",
-        "path": "independent/EagleScout/after/checkerboards.jpg"
+        "path": "independent/Eagle Scout Project/after/checkerboards.jpg"
       }
     },
     {
@@ -20,12 +20,12 @@
       "before": {
         "source": "IMG_7954.HEIC",
         "caption": "Weeds and patchy ground around the plants and curved stone edge.",
-        "path": "independent/EagleScout/before/bridge-planting-bed.jpg"
+        "path": "independent/Eagle Scout Project/before/bridge-planting-bed.jpg"
       },
       "after": {
         "source": "IMG_8019.HEIC",
         "caption": "Fresh mulch around the established plants and stone edging.",
-        "path": "independent/EagleScout/after/bridge-planting-bed.jpg"
+        "path": "independent/Eagle Scout Project/after/bridge-planting-bed.jpg"
       }
     },
     {
@@ -34,12 +34,12 @@
       "before": {
         "source": "IMG_7963.HEIC",
         "caption": "The planting island before the bed was refreshed.",
-        "path": "independent/EagleScout/before/circular-planting-island.jpg"
+        "path": "independent/Eagle Scout Project/before/circular-planting-island.jpg"
       },
       "after": {
         "source": "IMG_8023.HEIC",
         "caption": "A defined, freshly mulched bed around the ornamental grass.",
-        "path": "independent/EagleScout/after/circular-planting-island.jpg"
+        "path": "independent/Eagle Scout Project/after/circular-planting-island.jpg"
       }
     },
     {
@@ -48,12 +48,12 @@
       "before": {
         "source": "IMG_7970.HEIC",
         "caption": "Overgrown ground beside the course and stepping-stone approach.",
-        "path": "independent/EagleScout/before/corner-planting-bed.jpg"
+        "path": "independent/Eagle Scout Project/before/corner-planting-bed.jpg"
       },
       "after": {
         "source": "IMG_8014.HEIC",
         "caption": "The inner corner bed after mulching, with work continuing nearby.",
-        "path": "independent/EagleScout/after/corner-planting-bed.jpg"
+        "path": "independent/Eagle Scout Project/after/corner-planting-bed.jpg"
       }
     },
     {
@@ -62,12 +62,12 @@
       "before": {
         "source": "IMG_7984.HEIC",
         "caption": "The course and patchy ground beside the gazebo before the landscaping work.",
-        "path": "independent/EagleScout/before/gazebo-surroundings.jpg"
+        "path": "independent/Eagle Scout Project/before/gazebo-surroundings.jpg"
       },
       "after": {
         "source": "IMG_8024.HEIC",
         "caption": "Fresh mulch around the gazebo-side concrete pad and established plants.",
-        "path": "independent/EagleScout/after/gazebo-surroundings.jpg"
+        "path": "independent/Eagle Scout Project/after/gazebo-surroundings.jpg"
       }
     },
     {
@@ -76,12 +76,12 @@
       "before": {
         "source": "IMG_8006.HEIC",
         "caption": "Overgrown ground near the tree, stepping stones, and tire planter.",
-        "path": "independent/EagleScout/before/tree-side-planting-bed.jpg"
+        "path": "independent/Eagle Scout Project/before/tree-side-planting-bed.jpg"
       },
       "after": {
         "source": "IMG_8034.HEIC",
         "caption": "Fresh mulch across the tree-side bed, with finishing work still underway.",
-        "path": "independent/EagleScout/after/tree-side-planting-bed.jpg"
+        "path": "independent/Eagle Scout Project/after/tree-side-planting-bed.jpg"
       }
     },
     {
@@ -91,13 +91,13 @@
         "source": "IMG_7973.jpg",
         "label": "Before",
         "caption": "Loose, displaced border pavers along the angled mini-golf hole.",
-        "path": "independent/EagleScout/before/paver-stone-repairs.jpg"
+        "path": "independent/Eagle Scout Project/before/paver-stone-repairs.jpg"
       },
       "after": {
         "source": "IMG_7994(1).jpg",
         "label": "During repairs",
         "caption": "Volunteers resetting and aligning paver stones along another section of the course.",
-        "path": "independent/EagleScout/after/paver-stone-repairs.jpg"
+        "path": "independent/Eagle Scout Project/after/paver-stone-repairs.jpg"
       }
     }
   ]
