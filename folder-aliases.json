@@ -1,4 +1,8 @@
 {
   "independent/EagleScout": "independent/Eagle Scout Project",
-  "independent/Avalanche-Network-Simulation": "independent/Avalanche Network Infrastructure"
+  "independent/Avalanche-Network-Simulation": "independent/Avalanche Network Infrastructure",
+  "independent/Avalanche Network Infrastructure/V1": "independent/Avalanche Network Infrastructure/First Draft",
+  "independent/Avalanche Network Infrastructure/V2": "independent/Avalanche Network Infrastructure/Second Draft",
+  "independent/Avalanche-Network-Simulation/V1": "independent/Avalanche Network Infrastructure/First Draft",
+  "independent/Avalanche-Network-Simulation/V2": "independent/Avalanche Network Infrastructure/Second Draft"
 }

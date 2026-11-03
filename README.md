@@ -26,7 +26,7 @@ This replacement restores both pages, updates all Eagle Scout links/photo paths 
 
 All 47 files supplied under `content/` are retained unchanged. Forty are public indexed files; five `.gitkeep` placeholders and the two previously excluded bridge-approach photos are not published. The original images and three older course-summary directories are also kept in the source replacement for reference. They are not part of the current public File Library.
 
-The homepage, accomplishments, certifications, course cards, personal-project cards, gallery layout, Markdown formatting, source toggle, PDF previews, code previews, and downloads are retained. The Avalanche homepage card opens the newest immediate subfolder, currently `Avalanche Network Infrastructure/V1`. Folder creation order uses the first Git commit adding a file in that folder; editing an older folder does not make it newest. When dates tie, names break the tie in natural descending order, so V10 sorts after V2.
+The homepage, accomplishments, certifications, course cards, personal-project cards, gallery layout, Markdown formatting, source toggle, PDF previews, code previews, and downloads are retained. The Avalanche homepage card opens the newest immediate subfolder, currently `Avalanche Network Infrastructure/Second Draft`. Folder creation order uses the first Git commit adding a file in that folder; editing an older folder does not make it newest. When dates tie, names break the tie in natural descending order, so V10 sorts after V2 when using numbered version names.
 
 Old `EagleScout` and `Avalanche-Network-Simulation` File Library links are supported through `folder-aliases.json`.
 
@@ -37,10 +37,11 @@ Add files beneath the appropriate existing directory, then commit and push:
 - `content/coursework/PythonEssentials/`
 - `content/coursework/ServerManagement/`
 - `content/coursework/CiscoCCNASecurity/`
-- `content/independent/Avalanche Network Infrastructure/V1/`
+- `content/independent/Avalanche Network Infrastructure/First Draft/`
+- `content/independent/Avalanche Network Infrastructure/Second Draft/`
 - `content/independent/Eagle Scout Project/`
 
-For a new Avalanche version, create a sibling folder such as `V2` inside `Avalanche Network Infrastructure`, put the version's files inside it, then commit and push. The folder must contain at least one tracked file; Git does not save empty folders. The homepage card will automatically follow the newest version folder after the site publishes.
+For a new Avalanche version, create a sibling folder such as `Third Draft` inside `Avalanche Network Infrastructure`, put the version's files inside it, then commit and push. The folder must contain at least one tracked file; Git does not save empty folders. The homepage card will automatically follow the newest version folder after the site publishes.
 
 Markdown (`.md` or `.MD`) opens formatted. Python and other source files display as code. Images, PDFs, and Word text have previews; other file types can be downloaded. PDF previews depend on the visitor's browser, and the download link remains available.
 
@@ -62,3 +63,9 @@ Open http://localhost:8000/. Opening an HTML file directly by double-clicking do
 `scripts/build_site.py` checks required pages, runs the content indexer, stages the public files into `_site/`, and validates page links and indexed file availability. Only the pages, assets, and indexed content are published. The `_site` folder is ignored by Git and rebuilt automatically. The repository contains one Pages workflow: `.github/workflows/pages.yml`.
 
 Official Pages publishing instructions: https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site
+
+## Latest deployment repair
+
+The homepage fallback linked to a deleted Avalanche `V1` folder after the drafts were renamed. The strict build rejected that missing folder and stopped deployment. The fallback now opens the stable Avalanche project root; the existing browser script still selects the newest immediate draft folder. Legacy V1/V2 links redirect through folder aliases.
+
+Copy this repair over the existing checkout, preserve its `.git` folder, commit, and push. Do not replace the repository history.
