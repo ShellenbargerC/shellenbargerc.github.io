@@ -42,6 +42,8 @@
     .certification-card{border:1px solid var(--line);border-radius:15px;background:white;padding:30px;display:grid;grid-template-columns:180px minmax(0,1fr);gap:30px;align-items:center}.certification-badge{display:flex;align-items:center;justify-content:center;min-height:180px}.certification-badge img{display:block;max-width:100%;height:auto}.certification-info h3{font-size:24px;line-height:1.3;margin:10px 0 12px;letter-spacing:-.5px}.certification-info p{font-size:14px;color:var(--muted);margin:0 0 18px;max-width:650px}.credential-details{margin:0 0 22px}.credential-details dt{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.8px}.credential-details dd{margin:5px 0 0;font:14px/1.6 ui-monospace,monospace;overflow-wrap:anywhere}.certification-badge-fallback{width:165px;min-height:165px;border:3px solid #c8202f;border-radius:16px;padding:17px 10px;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#b61b2a;background:white}.certification-badge-fallback span{font-size:14px}.certification-badge-fallback strong{font-size:37px;line-height:1.4}.certification-badge-fallback span:last-child{text-transform:uppercase;font-size:11px;letter-spacing:2px}
     @media(max-width:760px){.certification-card{grid-template-columns:1fr;padding:24px;gap:15px}.certification-info h3{font-size:22px}}
   .avalanche-feature{gap:18px;transition:box-shadow .15s}.avalanche-feature:hover{box-shadow:0 8px 24px #14292324}.avalanche-icon{width:150px;height:auto;color:var(--lime)}.avalanche-feature h2{font-size:38px;line-height:1.15;letter-spacing:-1.3px;color:var(--lime);margin:0}.avalanche-feature h2 span{display:block;font-size:20px;line-height:1.4;letter-spacing:-.3px;margin-top:10px;color:var(--paper)}.avalanche-feature p{max-width:none;margin:0}.avalanche-cta{display:flex;justify-content:space-between;align-items:center;gap:15px;font-size:14px;font-weight:650;border-top:1px solid #ffffff35;padding-top:18px;color:var(--lime)}
+
+    .aws-card{margin-top:25px}.aws-badge-link{display:block;width:190px;max-width:100%;margin:auto}.aws-badge-window{display:block;position:relative;width:100%;aspect-ratio:258/273;overflow:hidden;background:white}.aws-badge-window img{position:absolute;display:block;width:452.71318%;max-width:none;height:auto;left:-36.43411%;top:-72.52747%}.aws-card .achievement-description{margin-bottom:18px}.aws-skills{display:flex;flex-wrap:wrap;gap:7px;margin:18px 0 22px}.aws-skills span{font-size:11px;padding:4px 9px;border:1px solid var(--line);border-radius:5px;color:var(--muted)}
 </style>
 </head>
 <body>
@@ -50,7 +52,7 @@
   <main id="main">
     <section class="about-intro" aria-labelledby="about-title">
       <div><span class="eyebrow">About me</span><h1 id="about-title">Hi, I’m Cameron<br><em>Shellenbarger.</em></h1><p class="bio">I’m studying Python, server management, and network security. This portfolio is where I bring my class projects and personal work together.</p><p class="bio">I want it to show more than a finished result: the code, the notes, the output, and what I’m learning as I go.</p><div class="actions"><a class="button" href="projects.html">Explore my projects <span aria-hidden="true">↗</span></a><a class="button secondary" href="files.html">Browse the file library</a></div></div>
-      <a class="identity avalanche-feature" id="avalanche-feature" href="files.html?folder=independent%2FAvalanche%20Network%20Infrastructure" aria-labelledby="avalanche-feature-title">
+      <a class="identity avalanche-feature" id="avalanche-feature" href="files.html?folder=independent%2FAvalanche%20Network%20Infrastructure%2FV1" aria-labelledby="avalanche-feature-title">
         <span class="eyebrow">Personal project · In progress</span>
         <svg class="avalanche-icon" viewBox="0 0 180 68" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="2"><path d="M30 34h120M90 34V12M90 34v22"/><rect x="6" y="22" width="36" height="24" rx="4"/><rect x="138" y="22" width="36" height="24" rx="4"/><rect x="73" y="2" width="34" height="20" rx="4"/><rect x="73" y="46" width="34" height="20" rx="4"/></g></svg>
         <h2 id="avalanche-feature-title">Avalanche<span>Operational Security &amp;<br>Network Infrastructure</span></h2>
@@ -74,6 +76,20 @@
         <dl class="achievement-stats eagle-stats"><div><dt>Troop</dt><dd>200<span> BSA</span></dd></div><div><dt>Troop recognition</dt><dd>184<span>th Eagle Scout</span></dd></div><div><dt>Rank earned</dt><dd class="rank-date">June 24, 2025</dd></div></dl>
         <div class="eagle-project-summary"><h4>Alum Creek Park Renovation</h4><p>I planned and led volunteer crews renovating the putt-putt course and nature-center area at Alum Creek Campground. We refreshed the gardens, improved the course, and repainted the outdoor checkerboard for campers to enjoy.</p><a class="button" href="files.html?folder=independent%2FEagle%20Scout%20Project">View my Eagle Scout project <span aria-hidden="true">↗</span></a></div>
         <p class="emblem-credit">Eagle Scout emblem: <a href="https://communications.shacbsa.org/e">Sam Houston Area Council graphics collection ↗</a></p>
+      </article>
+      <article class="achievement-card aws-card" aria-labelledby="aws-foundations-title">
+        <div class="achievement-intro">
+          <a class="aws-badge-link" href="assets/accomplishments/aws-cloud-foundations-award.png" aria-label="View AWS Academy Cloud Foundations badge details">
+            <span class="aws-badge-window"><img src="assets/accomplishments/aws-cloud-foundations-award.png" alt="AWS Academy Cloud Foundations Trained badge" width="1168" height="612" loading="lazy"></span>
+          </a>
+          <div>
+            <div class="achievement-heading"><div><span class="achievement-label">AWS Academy · Cloud training</span><h3 id="aws-foundations-title">AWS Academy Cloud Foundations</h3></div><span class="team-pill">Training badge</span></div>
+            <p class="achievement-description">Earned the AWS Academy Graduate — Cloud Foundations training badge, covering AWS cloud concepts, core services, architecture, pricing, and support.</p>
+            <span class="award-caption">Issued by Amazon Web Services Training and Certification<br>Issued <time datetime="2026-05-08">May 8, 2026</time></span>
+            <div class="aws-skills" aria-label="Skills covered"><span>AWS Architecture</span><span>AWS Cloud</span><span>AWS Core Services</span><span>AWS Pricing</span><span>AWS Support</span></div>
+            <a class="button secondary" href="assets/accomplishments/aws-cloud-foundations-award.png">View badge details <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
       </article>
     </section>
     <section class="certifications" aria-labelledby="certifications-title">
