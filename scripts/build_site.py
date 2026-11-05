@@ -1,7 +1,7 @@
 """Build exactly the public static site. Run from any working directory."""
 from html.parser import HTMLParser
 from pathlib import Path
-from urllib.parse import unquote, urlsplit
+from urllib.parse import parse_qs, unquote, urlsplit
 import json
 import shutil
 from build_content import build, ROOT
@@ -20,6 +20,18 @@ class Links(HTMLParser):
         for name, value in attrs:
             if name in ('href', 'src') and value:
                 self.links.append(value)
+
+
+def folder_is_available(folder, folder_paths, aliases):
+    """Accept the existing folder or an alias that File Library can resolve."""
+    if folder in folder_paths:
+        return True
+    for old_root, new_root in sorted(aliases.items(), key=lambda item: len(item[0]), reverse=True):
+        if folder == old_root or folder.startswith(old_root + '/'):
+            candidate = new_root + folder[len(old_root):]
+            if candidate in folder_paths:
+                return True
+    return False
 
 
 def validate_site(destination):
@@ -41,13 +53,12 @@ def validate_site(destination):
     for page in PAGES:
         links = Links()
         links.feed((destination / page).read_text(encoding='utf-8'))
-        from urllib.parse import parse_qs
         for href in links.links:
             url = urlsplit(href)
             if url.path != 'files.html':
                 continue
             folder = parse_qs(url.query).get('folder', [None])[0]
-            if folder and folder not in folder_paths:
+            if folder and not folder_is_available(folder, folder_paths, index.get('folderAliases', {})):
                 raise ValueError(f'{page} links to missing library folder: {folder}')
     print(f'Validated {len(PAGES)} pages and {len(index["files"])} indexed public files.')
 
