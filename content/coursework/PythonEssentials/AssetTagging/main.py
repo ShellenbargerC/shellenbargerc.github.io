@@ -29,6 +29,7 @@ with csv_file.open("r", encoding="utf-8-sig", newline= "") as file:
             <meta name="viewport"
                   content="width=device-width, initial-scale=1">
             <title>{escape(asset_id)}</title>
+        <style>html{{color-scheme:light;background:#fff;color:#142923}}body{{background:#fff;color:#142923;font:16px/1.6 system-ui,sans-serif;max-width:760px;margin:32px auto;padding:0 20px;overflow-wrap:anywhere}}img{{max-width:100%;height:auto}}</style>
         </head>
         <body>
             <h1>Asset: {escape(asset_id)}</h1>

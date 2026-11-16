@@ -5,8 +5,9 @@ from urllib.parse import parse_qs, unquote, urlsplit
 import json
 import shutil
 from build_content import build, ROOT
+from build_asset_tagging import build_asset_tagging
 
-PAGES = ('index.html', 'projects.html', 'files.html', 'about.html', 'labs.html')
+PAGES = ('index.html', 'projects.html', 'files.html', 'about.html', 'labs.html', 'asset-tagging.html')
 REQUIRED = (*PAGES, 'assets/js/avalanche-feature.js',
             'assets/js/markdown-preview.js', 'assets/vendor/marked/marked.umd.js')
 
@@ -64,6 +65,7 @@ def validate_site(destination):
 
 
 def main():
+    build_asset_tagging(ROOT)
     missing = [path for path in REQUIRED if not (ROOT / path).is_file()]
     if missing:
         raise SystemExit('Missing required site files: ' + ', '.join(missing)

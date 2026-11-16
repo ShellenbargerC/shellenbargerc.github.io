@@ -71,7 +71,13 @@ function showFile(file){
  else if(file.kind==='pdf'){const frame=el('iframe');frame.className='pdf';frame.src=encodedPath(file.url);frame.title=file.name+' PDF preview';viewer.append(frame,el('p','If your browser cannot display this PDF, use Download original.','note'));}
  else if(file.kind==='text'){
   const pre=el('pre'),code=el('code',file.preview||'(Empty file)');pre.append(code);
-  if(/\.md$/i.test(file.name)){
+  if(file.path.startsWith('coursework/PythonEssentials/AssetTagging/docs/')&&/\.html$/i.test(file.name)){
+   const frame=el('iframe');frame.src=encodedPath(file.url);frame.title=file.name+' webpage preview';frame.setAttribute('sandbox','');frame.style='width:100%;min-height:500px;border:1px solid var(--line);background:white';
+   const open=el('a','Open asset webpage ↗','button secondary');open.href=encodedPath(file.url);open.target='_blank';open.rel='noopener';
+   const toggle=el('button','Show source','button secondary');toggle.type='button';toggle.setAttribute('aria-pressed','false');pre.hidden=true;
+   toggle.addEventListener('click',()=>{pre.hidden=!pre.hidden;frame.hidden=!pre.hidden;toggle.textContent=pre.hidden?'Show source':'Show webpage';toggle.setAttribute('aria-pressed',String(!pre.hidden));});
+   toolbar.append(open,toggle);viewer.append(frame,pre);
+  }else if(/\.md$/i.test(file.name)){
    try{
     const preview=PortfolioMarkdown.render(file,{encodedPath,files});
     pre.id='markdown-source';pre.hidden=true;

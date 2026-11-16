@@ -2,6 +2,22 @@
 
 Complete replacement for https://shellenbargerc.github.io/ using the existing layout and current project/lab content.
 
+## Asset Tagging project
+
+The homepage and Projects page both have a direct **Open Asset Tagging** link. The project opens at `https://shellenbargerc.github.io/asset-tagging.html` and lists all existing asset HTML pages, with search, a white-background webpage preview, Open page, and Copy link actions. The original files remain in File Library under Python Essentials → AssetTagging; HTML assets there also open as webpages, with a source toggle.
+
+For example, PC-001’s direct URL is:
+
+```text
+https://shellenbargerc.github.io/content/coursework/PythonEssentials/AssetTagging/docs/PC-001.html
+```
+
+After publishing, use **Copy link** for each asset and paste it into your link shortener. Put the shortened URL into the QR label. Test a printed QR before printing all labels. Update the HTML contents later without changing that asset’s filename or folder so printed links continue to work.
+
+The directory is regenerated from `content/coursework/PythonEssentials/AssetTagging/docs/*.html` on each build. When adding assets, generate their HTML pages with the Python project first, then commit and push the new pages. Editing only `assets.csv` does not regenerate individual asset HTML during deployment. To change the project directory layout, edit `scripts/asset-tagging-template.html` and `assets/js/asset-tagging.js`.
+
+To apply this ZIP, copy its extracted contents over your existing repository folder, including `.github`, and keep your own `.git` folder. Commit and push. The included GitHub Actions workflow builds and publishes the update. This ZIP does not include repository history or the generated `_site` directory.
+
 ## Replace the existing site and publish
 
 Use the same **ShellenbargerC/shellenbargerc.github.io** repository. Keeping that repository keeps your site address unchanged.
