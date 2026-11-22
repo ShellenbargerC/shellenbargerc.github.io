@@ -36,6 +36,18 @@ def folder_is_available(folder, folder_paths, aliases):
 
 
 def validate_site(destination):
+    # Validate resources inside individual asset records as well as top-level pages.
+    asset_docs = destination / 'content/coursework/PythonEssentials/AssetTagging/docs'
+    for asset_page in sorted(asset_docs.glob('*.html')):
+        links = Links()
+        links.feed(asset_page.read_text(encoding='utf-8'))
+        for href in links.links:
+            url = urlsplit(href)
+            if url.scheme or url.netloc or not url.path:
+                continue
+            target = asset_page.parent / unquote(url.path)
+            if not target.is_file():
+                raise ValueError(f'{asset_page.name} links to missing asset resource: {href}')
     for page in PAGES:
         links = Links()
         links.feed((destination / page).read_text(encoding='utf-8'))
